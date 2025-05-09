@@ -46,7 +46,7 @@
             // 
             label_role.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label_role.AutoSize = true;
-            label_role.Location = new Point(684, 28);
+            label_role.Location = new Point(883, 28);
             label_role.Name = "label_role";
             label_role.Size = new Size(63, 25);
             label_role.TabIndex = 1;
@@ -56,11 +56,11 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Cyan;
+            BackColor = Color.DeepSkyBlue;
             Controls.Add(label_role);
             Controls.Add(label_name);
             Name = "member";
-            Size = new Size(851, 76);
+            Size = new Size(1050, 81);
             ResumeLayout(false);
             PerformLayout();
         }

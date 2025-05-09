@@ -29,89 +29,81 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskDetail));
-            panel1 = new Panel();
-            panel2 = new Panel();
-            label_ProjectName = new Label();
-            panel3 = new Panel();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            panel_descript = new Panel();
             richTextBox_Descript = new RichTextBox();
             label_Descript = new Label();
-            panel4 = new Panel();
-            label_Deadline = new Label();
-            panel5 = new Panel();
-            label_file = new Label();
-            panel7 = new Panel();
-            panel8 = new Panel();
-            panel6 = new Panel();
-            panel9 = new Panel();
+            panel_header = new Panel();
+            pictureBox1 = new PictureBox();
+            label_ProjectName = new Label();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            panel_joblist = new Panel();
+            label_joblist = new Label();
+            checkedListBox_joblist = new CheckedListBox();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            panel_newActivity = new Panel();
+            richTextBox_newActivity = new RichTextBox();
+            label_newactivity = new Label();
+            panel_member = new Panel();
             richTextBox_member = new RichTextBox();
             label_member = new Label();
-            panel10 = new Panel();
-            label_newactivity = new Label();
-            richTextBox_Deadline = new RichTextBox();
+            panel_file = new Panel();
+            label_file = new Label();
             richTextBox_file = new RichTextBox();
-            richTextBox_newactivity = new RichTextBox();
-            panel11 = new Panel();
-            label1 = new Label();
-            checkedListBox1 = new CheckedListBox();
-            pictureBox1 = new PictureBox();
-            panel1.SuspendLayout();
-            panel3.SuspendLayout();
-            panel4.SuspendLayout();
-            panel5.SuspendLayout();
-            panel7.SuspendLayout();
-            panel9.SuspendLayout();
-            panel10.SuspendLayout();
-            panel11.SuspendLayout();
+            panel_deadline = new Panel();
+            richTextBox_Deadline = new RichTextBox();
+            label_Deadline = new Label();
+            tableLayoutPanel1.SuspendLayout();
+            panel_descript.SuspendLayout();
+            panel_header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            tableLayoutPanel2.SuspendLayout();
+            panel_joblist.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
+            panel_newActivity.SuspendLayout();
+            panel_member.SuspendLayout();
+            panel_file.SuspendLayout();
+            panel_deadline.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // tableLayoutPanel1
             // 
-            panel1.BackColor = Color.Cyan;
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(panel2);
-            panel1.Controls.Add(label_ProjectName);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1316, 48);
-            panel1.TabIndex = 0;
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(panel_descript, 0, 1);
+            tableLayoutPanel1.Controls.Add(panel_header, 0, 0);
+            tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 2);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 12F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
+            tableLayoutPanel1.Size = new Size(1316, 775);
+            tableLayoutPanel1.TabIndex = 11;
             // 
-            // panel2
+            // panel_descript
             // 
-            panel2.Location = new Point(3, 571);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1311, 175);
-            panel2.TabIndex = 2;
-            // 
-            // label_ProjectName
-            // 
-            label_ProjectName.AutoSize = true;
-            label_ProjectName.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_ProjectName.Location = new Point(180, 1);
-            label_ProjectName.Name = "label_ProjectName";
-            label_ProjectName.Size = new Size(174, 38);
-            label_ProjectName.TabIndex = 0;
-            label_ProjectName.Text = "Chi tiết task";
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.Cyan;
-            panel3.Controls.Add(richTextBox_Descript);
-            panel3.Controls.Add(label_Descript);
-            panel3.Location = new Point(14, 67);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(1287, 71);
-            panel3.TabIndex = 1;
+            panel_descript.BackColor = Color.DeepSkyBlue;
+            panel_descript.Controls.Add(richTextBox_Descript);
+            panel_descript.Controls.Add(label_Descript);
+            panel_descript.Dock = DockStyle.Fill;
+            panel_descript.Location = new Point(3, 65);
+            panel_descript.Name = "panel_descript";
+            panel_descript.Size = new Size(1310, 87);
+            panel_descript.TabIndex = 1;
             // 
             // richTextBox_Descript
             // 
-            richTextBox_Descript.BackColor = Color.Cyan;
+            richTextBox_Descript.BackColor = Color.DeepSkyBlue;
             richTextBox_Descript.BorderStyle = BorderStyle.None;
             richTextBox_Descript.Location = new Point(8, 28);
             richTextBox_Descript.Name = "richTextBox_Descript";
-            richTextBox_Descript.Size = new Size(1264, 40);
+            richTextBox_Descript.ReadOnly = true;
+            richTextBox_Descript.Size = new Size(1264, 25);
             richTextBox_Descript.TabIndex = 1;
+            richTextBox_Descript.TabStop = false;
             richTextBox_Descript.Text = "Nội dung mô tả";
             // 
             // label_Descript
@@ -124,86 +116,158 @@
             label_Descript.TabIndex = 0;
             label_Descript.Text = "Mô tả";
             // 
-            // panel4
+            // panel_header
             // 
-            panel4.BackColor = Color.Cyan;
-            panel4.Controls.Add(label_Deadline);
-            panel4.Location = new Point(14, 153);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(375, 94);
-            panel4.TabIndex = 2;
+            panel_header.BackColor = Color.DeepSkyBlue;
+            panel_header.Controls.Add(pictureBox1);
+            panel_header.Controls.Add(label_ProjectName);
+            panel_header.Dock = DockStyle.Fill;
+            panel_header.Location = new Point(3, 3);
+            panel_header.Name = "panel_header";
+            panel_header.Size = new Size(1310, 56);
+            panel_header.TabIndex = 0;
             // 
-            // label_Deadline
+            // pictureBox1
             // 
-            label_Deadline.AutoSize = true;
-            label_Deadline.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_Deadline.Location = new Point(0, 0);
-            label_Deadline.Name = "label_Deadline";
-            label_Deadline.Size = new Size(87, 25);
-            label_Deadline.TabIndex = 0;
-            label_Deadline.Text = "Deadline";
+            pictureBox1.Cursor = Cursors.Hand;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(1, -3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(138, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
             // 
-            // panel5
+            // label_ProjectName
             // 
-            panel5.BackColor = Color.Cyan;
-            panel5.Controls.Add(label_file);
-            panel5.Controls.Add(panel7);
-            panel5.Controls.Add(panel6);
-            panel5.Location = new Point(14, 260);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(375, 183);
-            panel5.TabIndex = 3;
+            label_ProjectName.AutoSize = true;
+            label_ProjectName.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_ProjectName.Location = new Point(163, 1);
+            label_ProjectName.Name = "label_ProjectName";
+            label_ProjectName.Size = new Size(174, 38);
+            label_ProjectName.TabIndex = 0;
+            label_ProjectName.Text = "Chi tiết task";
             // 
-            // label_file
+            // tableLayoutPanel2
             // 
-            label_file.AutoSize = true;
-            label_file.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_file.Location = new Point(0, 0);
-            label_file.Name = "label_file";
-            label_file.Size = new Size(125, 25);
-            label_file.TabIndex = 6;
-            label_file.Text = "File đính kèm";
+            tableLayoutPanel2.ColumnCount = 2;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
+            tableLayoutPanel2.Controls.Add(panel_joblist, 1, 0);
+            tableLayoutPanel2.Controls.Add(tableLayoutPanel3, 0, 0);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(3, 158);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.Size = new Size(1310, 614);
+            tableLayoutPanel2.TabIndex = 2;
             // 
-            // panel7
+            // panel_joblist
             // 
-            panel7.Controls.Add(panel8);
-            panel7.Location = new Point(0, 199);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(375, 115);
-            panel7.TabIndex = 5;
+            panel_joblist.BackColor = Color.DeepSkyBlue;
+            panel_joblist.Controls.Add(label_joblist);
+            panel_joblist.Controls.Add(checkedListBox_joblist);
+            panel_joblist.Dock = DockStyle.Fill;
+            panel_joblist.Location = new Point(396, 3);
+            panel_joblist.Name = "panel_joblist";
+            panel_joblist.Size = new Size(911, 608);
+            panel_joblist.TabIndex = 10;
             // 
-            // panel8
+            // label_joblist
             // 
-            panel8.Location = new Point(8, 199);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(375, 149);
-            panel8.TabIndex = 4;
+            label_joblist.AutoSize = true;
+            label_joblist.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_joblist.Location = new Point(29, 28);
+            label_joblist.Name = "label_joblist";
+            label_joblist.Size = new Size(139, 25);
+            label_joblist.TabIndex = 1;
+            label_joblist.Text = "Danh sách việc";
             // 
-            // panel6
+            // checkedListBox_joblist
             // 
-            panel6.Location = new Point(8, 199);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(375, 149);
-            panel6.TabIndex = 4;
+            checkedListBox_joblist.BackColor = Color.DeepSkyBlue;
+            checkedListBox_joblist.BorderStyle = BorderStyle.None;
+            checkedListBox_joblist.FormattingEnabled = true;
+            checkedListBox_joblist.Location = new Point(86, 61);
+            checkedListBox_joblist.Name = "checkedListBox_joblist";
+            checkedListBox_joblist.Size = new Size(792, 532);
+            checkedListBox_joblist.TabIndex = 0;
             // 
-            // panel9
+            // tableLayoutPanel3
             // 
-            panel9.BackColor = Color.Cyan;
-            panel9.Controls.Add(richTextBox_member);
-            panel9.Controls.Add(label_member);
-            panel9.Location = new Point(14, 459);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(375, 129);
-            panel9.TabIndex = 4;
+            tableLayoutPanel3.ColumnCount = 1;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel3.Controls.Add(panel_newActivity, 0, 3);
+            tableLayoutPanel3.Controls.Add(panel_member, 0, 2);
+            tableLayoutPanel3.Controls.Add(panel_file, 0, 1);
+            tableLayoutPanel3.Controls.Add(panel_deadline, 0, 0);
+            tableLayoutPanel3.Dock = DockStyle.Fill;
+            tableLayoutPanel3.Location = new Point(3, 3);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 4;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 38.0952377F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 19.0476189F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 28.5714283F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.Size = new Size(387, 608);
+            tableLayoutPanel3.TabIndex = 0;
+            // 
+            // panel_newActivity
+            // 
+            panel_newActivity.BackColor = Color.DeepSkyBlue;
+            panel_newActivity.Controls.Add(richTextBox_newActivity);
+            panel_newActivity.Controls.Add(label_newactivity);
+            panel_newActivity.Dock = DockStyle.Fill;
+            panel_newActivity.Location = new Point(3, 435);
+            panel_newActivity.Name = "panel_newActivity";
+            panel_newActivity.Size = new Size(381, 170);
+            panel_newActivity.TabIndex = 5;
+            // 
+            // richTextBox_newActivity
+            // 
+            richTextBox_newActivity.BackColor = Color.DeepSkyBlue;
+            richTextBox_newActivity.BorderStyle = BorderStyle.None;
+            richTextBox_newActivity.Location = new Point(8, 28);
+            richTextBox_newActivity.Name = "richTextBox_newActivity";
+            richTextBox_newActivity.ReadOnly = true;
+            richTextBox_newActivity.Size = new Size(355, 139);
+            richTextBox_newActivity.TabIndex = 1;
+            richTextBox_newActivity.TabStop = false;
+            richTextBox_newActivity.Text = "Hoạt động mới nhất ở đây";
+            // 
+            // label_newactivity
+            // 
+            label_newactivity.AutoSize = true;
+            label_newactivity.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_newactivity.Location = new Point(0, 0);
+            label_newactivity.Name = "label_newactivity";
+            label_newactivity.Size = new Size(140, 25);
+            label_newactivity.TabIndex = 0;
+            label_newactivity.Text = "Hoạt động mới";
+            // 
+            // panel_member
+            // 
+            panel_member.BackColor = Color.DeepSkyBlue;
+            panel_member.Controls.Add(richTextBox_member);
+            panel_member.Controls.Add(label_member);
+            panel_member.Dock = DockStyle.Fill;
+            panel_member.Location = new Point(3, 320);
+            panel_member.Name = "panel_member";
+            panel_member.Size = new Size(381, 109);
+            panel_member.TabIndex = 4;
             // 
             // richTextBox_member
             // 
-            richTextBox_member.BackColor = Color.Cyan;
+            richTextBox_member.BackColor = Color.DeepSkyBlue;
             richTextBox_member.BorderStyle = BorderStyle.None;
             richTextBox_member.Location = new Point(8, 28);
             richTextBox_member.Name = "richTextBox_member";
-            richTextBox_member.Size = new Size(355, 98);
+            richTextBox_member.ReadOnly = true;
+            richTextBox_member.Size = new Size(355, 78);
             richTextBox_member.TabIndex = 8;
+            richTextBox_member.TabStop = false;
             richTextBox_member.Text = "Các thành viên";
             // 
             // label_member
@@ -216,157 +280,129 @@
             label_member.TabIndex = 0;
             label_member.Text = "Thành viên đảm nhiệm";
             // 
-            // panel10
+            // panel_file
             // 
-            panel10.BackColor = Color.Cyan;
-            panel10.Controls.Add(label_newactivity);
-            panel10.Location = new Point(14, 603);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(375, 159);
-            panel10.TabIndex = 5;
+            panel_file.BackColor = Color.DeepSkyBlue;
+            panel_file.Controls.Add(label_file);
+            panel_file.Controls.Add(richTextBox_file);
+            panel_file.Dock = DockStyle.Fill;
+            panel_file.Location = new Point(3, 89);
+            panel_file.Name = "panel_file";
+            panel_file.Size = new Size(381, 225);
+            panel_file.TabIndex = 3;
             // 
-            // label_newactivity
+            // label_file
             // 
-            label_newactivity.AutoSize = true;
-            label_newactivity.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_newactivity.Location = new Point(0, 0);
-            label_newactivity.Name = "label_newactivity";
-            label_newactivity.Size = new Size(140, 25);
-            label_newactivity.TabIndex = 0;
-            label_newactivity.Text = "Hoạt động mới";
-            // 
-            // richTextBox_Deadline
-            // 
-            richTextBox_Deadline.BackColor = Color.Cyan;
-            richTextBox_Deadline.BorderStyle = BorderStyle.None;
-            richTextBox_Deadline.Location = new Point(22, 181);
-            richTextBox_Deadline.Name = "richTextBox_Deadline";
-            richTextBox_Deadline.Size = new Size(355, 63);
-            richTextBox_Deadline.TabIndex = 6;
-            richTextBox_Deadline.Text = "Thời gian Deadline";
+            label_file.AutoSize = true;
+            label_file.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_file.Location = new Point(0, 0);
+            label_file.Name = "label_file";
+            label_file.Size = new Size(125, 25);
+            label_file.TabIndex = 6;
+            label_file.Text = "File đính kèm";
             // 
             // richTextBox_file
             // 
-            richTextBox_file.BackColor = Color.Cyan;
+            richTextBox_file.BackColor = Color.DeepSkyBlue;
             richTextBox_file.BorderStyle = BorderStyle.None;
-            richTextBox_file.Location = new Point(22, 288);
+            richTextBox_file.Location = new Point(8, 28);
             richTextBox_file.Name = "richTextBox_file";
-            richTextBox_file.Size = new Size(355, 152);
+            richTextBox_file.ReadOnly = true;
+            richTextBox_file.Size = new Size(355, 194);
             richTextBox_file.TabIndex = 7;
+            richTextBox_file.TabStop = false;
             richTextBox_file.Text = "Các file đính kèm";
             // 
-            // richTextBox_newactivity
+            // panel_deadline
             // 
-            richTextBox_newactivity.BackColor = Color.Cyan;
-            richTextBox_newactivity.BorderStyle = BorderStyle.None;
-            richTextBox_newactivity.Location = new Point(22, 631);
-            richTextBox_newactivity.Name = "richTextBox_newactivity";
-            richTextBox_newactivity.Size = new Size(355, 128);
-            richTextBox_newactivity.TabIndex = 8;
-            richTextBox_newactivity.Text = "Hoạt động mới";
+            panel_deadline.BackColor = Color.DeepSkyBlue;
+            panel_deadline.Controls.Add(richTextBox_Deadline);
+            panel_deadline.Controls.Add(label_Deadline);
+            panel_deadline.Dock = DockStyle.Fill;
+            panel_deadline.Location = new Point(3, 3);
+            panel_deadline.Name = "panel_deadline";
+            panel_deadline.Size = new Size(381, 80);
+            panel_deadline.TabIndex = 2;
             // 
-            // panel11
+            // richTextBox_Deadline
             // 
-            panel11.BackColor = Color.Cyan;
-            panel11.Controls.Add(label1);
-            panel11.Controls.Add(checkedListBox1);
-            panel11.Location = new Point(408, 153);
-            panel11.Name = "panel11";
-            panel11.Size = new Size(893, 609);
-            panel11.TabIndex = 10;
+            richTextBox_Deadline.BackColor = Color.DeepSkyBlue;
+            richTextBox_Deadline.BorderStyle = BorderStyle.None;
+            richTextBox_Deadline.Location = new Point(8, 28);
+            richTextBox_Deadline.Name = "richTextBox_Deadline";
+            richTextBox_Deadline.ReadOnly = true;
+            richTextBox_Deadline.Size = new Size(355, 49);
+            richTextBox_Deadline.TabIndex = 6;
+            richTextBox_Deadline.TabStop = false;
+            richTextBox_Deadline.Text = "Thời gian Deadline";
             // 
-            // label1
+            // label_Deadline
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(29, 28);
-            label1.Name = "label1";
-            label1.Size = new Size(139, 25);
-            label1.TabIndex = 1;
-            label1.Text = "Danh sách việc";
-            // 
-            // checkedListBox1
-            // 
-            checkedListBox1.BackColor = Color.Cyan;
-            checkedListBox1.BorderStyle = BorderStyle.None;
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Location = new Point(86, 61);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(792, 532);
-            checkedListBox1.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Cursor = Cursors.Hand;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1, -1);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(138, 49);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 3;
-            pictureBox1.TabStop = false;
+            label_Deadline.AutoSize = true;
+            label_Deadline.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_Deadline.Location = new Point(0, 0);
+            label_Deadline.Name = "label_Deadline";
+            label_Deadline.Size = new Size(87, 25);
+            label_Deadline.TabIndex = 0;
+            label_Deadline.Text = "Deadline";
             // 
             // TaskDetail
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(panel11);
-            Controls.Add(richTextBox_newactivity);
-            Controls.Add(richTextBox_file);
-            Controls.Add(richTextBox_Deadline);
-            Controls.Add(panel10);
-            Controls.Add(panel9);
-            Controls.Add(panel5);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
-            Controls.Add(panel1);
+            Controls.Add(tableLayoutPanel1);
             Name = "TaskDetail";
             Size = new Size(1316, 775);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            panel7.ResumeLayout(false);
-            panel9.ResumeLayout(false);
-            panel9.PerformLayout();
-            panel10.ResumeLayout(false);
-            panel10.PerformLayout();
-            panel11.ResumeLayout(false);
-            panel11.PerformLayout();
+            Load += TaskDetail_Load;
+            tableLayoutPanel1.ResumeLayout(false);
+            panel_descript.ResumeLayout(false);
+            panel_descript.PerformLayout();
+            panel_header.ResumeLayout(false);
+            panel_header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            tableLayoutPanel2.ResumeLayout(false);
+            panel_joblist.ResumeLayout(false);
+            panel_joblist.PerformLayout();
+            tableLayoutPanel3.ResumeLayout(false);
+            panel_newActivity.ResumeLayout(false);
+            panel_newActivity.PerformLayout();
+            panel_member.ResumeLayout(false);
+            panel_member.PerformLayout();
+            panel_file.ResumeLayout(false);
+            panel_file.PerformLayout();
+            panel_deadline.ResumeLayout(false);
+            panel_deadline.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panel1;
-        private Label label_ProjectName;
         private Panel panel2;
-        private Panel panel3;
-        private Label label_Descript;
-        private Panel panel4;
-        private Label label_Deadline;
-        private Panel panel5;
-        private Label label_file;
         private Panel panel7;
         private Panel panel8;
         private Panel panel6;
-        private Panel panel9;
-        private Label label_member;
-        private Panel panel10;
-        private Label label_newactivity;
-        private RichTextBox richTextBox_Descript;
-        private RichTextBox richTextBox_member;
-        private RichTextBox richTextBox_Deadline;
-        private RichTextBox richTextBox_file;
-        private RichTextBox richTextBox_newactivity;
-        private Panel panel11;
-        private Label label1;
-        private CheckedListBox checkedListBox1;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Panel panel_header;
         private PictureBox pictureBox1;
+        private Label label_ProjectName;
+        private Panel panel_descript;
+        private RichTextBox richTextBox_Descript;
+        private Label label_Descript;
+        private Panel panel_deadline;
+        private RichTextBox richTextBox_Deadline;
+        private Label label_Deadline;
+        private Panel panel_file;
+        private Label label_file;
+        private RichTextBox richTextBox_file;
+        private Panel panel_member;
+        private RichTextBox richTextBox_member;
+        private Label label_member;
+        private Panel panel_newActivity;
+        private RichTextBox richTextBox_newActivity;
+        private Label label_newactivity;
+        private Panel panel_joblist;
+        private Label label_joblist;
+        private CheckedListBox checkedListBox_joblist;
+        private TableLayoutPanel tableLayoutPanel2;
+        private TableLayoutPanel tableLayoutPanel3;
     }
 }

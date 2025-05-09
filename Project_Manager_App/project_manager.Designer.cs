@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             panel_Menu = new Panel();
-            label_ProjectName = new Label();
-            button_havetodo = new Button();
-            button_IsDoing = new Button();
-            button_Finished = new Button();
-            flowTaskList = new FlowLayoutPanel();
             button_member = new Button();
+            button_Finished = new Button();
+            button_IsDoing = new Button();
+            button_havetodo = new Button();
+            label_ProjectName = new Label();
+            flowTaskList = new FlowLayoutPanel();
             panel_Menu.SuspendLayout();
             SuspendLayout();
             // 
             // panel_Menu
             // 
-            panel_Menu.BackColor = Color.Cyan;
+            panel_Menu.BackColor = Color.DeepSkyBlue;
             panel_Menu.Controls.Add(button_member);
             panel_Menu.Controls.Add(button_Finished);
             panel_Menu.Controls.Add(button_IsDoing);
@@ -52,44 +52,23 @@
             panel_Menu.Size = new Size(219, 718);
             panel_Menu.TabIndex = 0;
             // 
-            // label_ProjectName
+            // button_member
             // 
-            label_ProjectName.AutoSize = true;
-            label_ProjectName.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_ProjectName.Location = new Point(12, 9);
-            label_ProjectName.Name = "label_ProjectName";
-            label_ProjectName.Size = new Size(61, 32);
-            label_ProjectName.TabIndex = 0;
-            label_ProjectName.Text = "ABC";
-            // 
-            // button_havetodo
-            // 
-            button_havetodo.FlatAppearance.BorderSize = 0;
-            button_havetodo.FlatStyle = FlatStyle.Flat;
-            button_havetodo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button_havetodo.Location = new Point(0, 51);
-            button_havetodo.Margin = new Padding(0);
-            button_havetodo.Name = "button_havetodo";
-            button_havetodo.Size = new Size(219, 58);
-            button_havetodo.TabIndex = 1;
-            button_havetodo.Text = "Việc cần làm";
-            button_havetodo.UseVisualStyleBackColor = true;
-            // 
-            // button_IsDoing
-            // 
-            button_IsDoing.FlatAppearance.BorderSize = 0;
-            button_IsDoing.FlatStyle = FlatStyle.Flat;
-            button_IsDoing.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button_IsDoing.Location = new Point(0, 109);
-            button_IsDoing.Margin = new Padding(0);
-            button_IsDoing.Name = "button_IsDoing";
-            button_IsDoing.Size = new Size(219, 58);
-            button_IsDoing.TabIndex = 2;
-            button_IsDoing.Text = "Đang thực hiện";
-            button_IsDoing.UseVisualStyleBackColor = true;
+            button_member.Cursor = Cursors.Hand;
+            button_member.Dock = DockStyle.Bottom;
+            button_member.FlatAppearance.BorderSize = 0;
+            button_member.FlatStyle = FlatStyle.Flat;
+            button_member.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button_member.Location = new Point(0, 679);
+            button_member.Name = "button_member";
+            button_member.Size = new Size(219, 39);
+            button_member.TabIndex = 2;
+            button_member.Text = "Thành viên";
+            button_member.UseVisualStyleBackColor = true;
             // 
             // button_Finished
             // 
+            button_Finished.Cursor = Cursors.Hand;
             button_Finished.FlatAppearance.BorderSize = 0;
             button_Finished.FlatStyle = FlatStyle.Flat;
             button_Finished.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -101,6 +80,45 @@
             button_Finished.Text = "Đã hoàn thành";
             button_Finished.UseVisualStyleBackColor = true;
             // 
+            // button_IsDoing
+            // 
+            button_IsDoing.Cursor = Cursors.Hand;
+            button_IsDoing.FlatAppearance.BorderSize = 0;
+            button_IsDoing.FlatStyle = FlatStyle.Flat;
+            button_IsDoing.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button_IsDoing.Location = new Point(0, 109);
+            button_IsDoing.Margin = new Padding(0);
+            button_IsDoing.Name = "button_IsDoing";
+            button_IsDoing.Size = new Size(219, 58);
+            button_IsDoing.TabIndex = 2;
+            button_IsDoing.Text = "Đang thực hiện";
+            button_IsDoing.UseVisualStyleBackColor = true;
+            // 
+            // button_havetodo
+            // 
+            button_havetodo.Cursor = Cursors.Hand;
+            button_havetodo.FlatAppearance.BorderSize = 0;
+            button_havetodo.FlatStyle = FlatStyle.Flat;
+            button_havetodo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button_havetodo.Location = new Point(0, 51);
+            button_havetodo.Margin = new Padding(0);
+            button_havetodo.Name = "button_havetodo";
+            button_havetodo.Size = new Size(219, 58);
+            button_havetodo.TabIndex = 1;
+            button_havetodo.Text = "Việc cần làm";
+            button_havetodo.UseVisualStyleBackColor = true;
+            // 
+            // label_ProjectName
+            // 
+            label_ProjectName.AutoSize = true;
+            label_ProjectName.BackColor = Color.DeepSkyBlue;
+            label_ProjectName.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_ProjectName.Location = new Point(12, 9);
+            label_ProjectName.Name = "label_ProjectName";
+            label_ProjectName.Size = new Size(61, 32);
+            label_ProjectName.TabIndex = 0;
+            label_ProjectName.Text = "ABC";
+            // 
             // flowTaskList
             // 
             flowTaskList.BackColor = SystemColors.Control;
@@ -109,18 +127,6 @@
             flowTaskList.Name = "flowTaskList";
             flowTaskList.Size = new Size(1042, 718);
             flowTaskList.TabIndex = 1;
-            // 
-            // button_member
-            // 
-            button_member.FlatAppearance.BorderSize = 0;
-            button_member.FlatStyle = FlatStyle.Flat;
-            button_member.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button_member.Location = new Point(0, 679);
-            button_member.Name = "button_member";
-            button_member.Size = new Size(219, 39);
-            button_member.TabIndex = 2;
-            button_member.Text = "Thành viên";
-            button_member.UseVisualStyleBackColor = true;
             // 
             // project_manager
             // 

@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(memberlist));
             panel1 = new Panel();
-            label_Memberlist = new Label();
             pictureBox_back = new PictureBox();
+            label_Memberlist = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_back).BeginInit();
@@ -39,7 +39,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Cyan;
+            panel1.BackColor = Color.DeepSkyBlue;
             panel1.Controls.Add(pictureBox_back);
             panel1.Controls.Add(label_Memberlist);
             panel1.Dock = DockStyle.Top;
@@ -47,16 +47,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1238, 49);
             panel1.TabIndex = 0;
-            // 
-            // label_Memberlist
-            // 
-            label_Memberlist.AutoSize = true;
-            label_Memberlist.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_Memberlist.Location = new Point(186, 0);
-            label_Memberlist.Name = "label_Memberlist";
-            label_Memberlist.Size = new Size(162, 38);
-            label_Memberlist.TabIndex = 1;
-            label_Memberlist.Text = "Thành viên";
             // 
             // pictureBox_back
             // 
@@ -68,6 +58,16 @@
             pictureBox_back.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox_back.TabIndex = 4;
             pictureBox_back.TabStop = false;
+            // 
+            // label_Memberlist
+            // 
+            label_Memberlist.AutoSize = true;
+            label_Memberlist.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_Memberlist.Location = new Point(186, 0);
+            label_Memberlist.Name = "label_Memberlist";
+            label_Memberlist.Size = new Size(162, 38);
+            label_Memberlist.TabIndex = 1;
+            label_Memberlist.Text = "Thành viên";
             // 
             // flowLayoutPanel1
             // 

@@ -16,5 +16,22 @@ namespace Project_Manager_App
         {
             InitializeComponent();
         }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public string MemberName
+        {
+            get => label_name.Text;
+            set => label_name.Text = value;
+        }
+
+        // Property để set vai trò
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public string MemberRole
+        {
+            get => label_role.Text;
+            set => label_role.Text = value;
+        }
     }
 }

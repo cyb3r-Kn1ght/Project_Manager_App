@@ -52,19 +52,19 @@
             richTextBox_newactivity = new RichTextBox();
             label_newactivity = new Label();
             panel11 = new Panel();
+            label13 = new Label();
+            label12 = new Label();
+            label11 = new Label();
+            label10 = new Label();
+            label9 = new Label();
+            label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
@@ -78,7 +78,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Cyan;
+            panel1.BackColor = Color.DeepSkyBlue;
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(label_ProjectName);
@@ -118,7 +118,7 @@
             // 
             // panel3
             // 
-            panel3.BackColor = Color.Cyan;
+            panel3.BackColor = Color.DeepSkyBlue;
             panel3.Controls.Add(richTextBox_Descript);
             panel3.Controls.Add(label_Descript);
             panel3.Location = new Point(15, 66);
@@ -128,7 +128,7 @@
             // 
             // richTextBox_Descript
             // 
-            richTextBox_Descript.BackColor = Color.Cyan;
+            richTextBox_Descript.BackColor = Color.DeepSkyBlue;
             richTextBox_Descript.BorderStyle = BorderStyle.None;
             richTextBox_Descript.Location = new Point(8, 28);
             richTextBox_Descript.Name = "richTextBox_Descript";
@@ -148,7 +148,7 @@
             // 
             // panel4
             // 
-            panel4.BackColor = Color.Cyan;
+            panel4.BackColor = Color.DeepSkyBlue;
             panel4.Controls.Add(richTextBox_Deadline);
             panel4.Controls.Add(label_Deadline);
             panel4.Location = new Point(15, 153);
@@ -158,7 +158,7 @@
             // 
             // richTextBox_Deadline
             // 
-            richTextBox_Deadline.BackColor = Color.Cyan;
+            richTextBox_Deadline.BackColor = Color.DeepSkyBlue;
             richTextBox_Deadline.BorderStyle = BorderStyle.None;
             richTextBox_Deadline.Location = new Point(8, 27);
             richTextBox_Deadline.Name = "richTextBox_Deadline";
@@ -178,7 +178,7 @@
             // 
             // panel5
             // 
-            panel5.BackColor = Color.Cyan;
+            panel5.BackColor = Color.DeepSkyBlue;
             panel5.Controls.Add(richTextBox_file);
             panel5.Controls.Add(label_file);
             panel5.Controls.Add(panel7);
@@ -190,7 +190,7 @@
             // 
             // richTextBox_file
             // 
-            richTextBox_file.BackColor = Color.Cyan;
+            richTextBox_file.BackColor = Color.DeepSkyBlue;
             richTextBox_file.BorderStyle = BorderStyle.None;
             richTextBox_file.Location = new Point(8, 28);
             richTextBox_file.Name = "richTextBox_file";
@@ -232,7 +232,7 @@
             // 
             // panel9
             // 
-            panel9.BackColor = Color.Cyan;
+            panel9.BackColor = Color.DeepSkyBlue;
             panel9.Controls.Add(richTextBox_member);
             panel9.Controls.Add(label_member);
             panel9.Location = new Point(15, 422);
@@ -242,7 +242,7 @@
             // 
             // richTextBox_member
             // 
-            richTextBox_member.BackColor = Color.Cyan;
+            richTextBox_member.BackColor = Color.DeepSkyBlue;
             richTextBox_member.BorderStyle = BorderStyle.None;
             richTextBox_member.Location = new Point(8, 28);
             richTextBox_member.Name = "richTextBox_member";
@@ -262,7 +262,7 @@
             // 
             // panel10
             // 
-            panel10.BackColor = Color.Cyan;
+            panel10.BackColor = Color.DeepSkyBlue;
             panel10.Controls.Add(richTextBox_newactivity);
             panel10.Controls.Add(label_newactivity);
             panel10.Location = new Point(15, 566);
@@ -272,7 +272,7 @@
             // 
             // richTextBox_newactivity
             // 
-            richTextBox_newactivity.BackColor = Color.Cyan;
+            richTextBox_newactivity.BackColor = Color.DeepSkyBlue;
             richTextBox_newactivity.BorderStyle = BorderStyle.None;
             richTextBox_newactivity.Location = new Point(8, 39);
             richTextBox_newactivity.Name = "richTextBox_newactivity";
@@ -292,7 +292,7 @@
             // 
             // panel11
             // 
-            panel11.BackColor = Color.Cyan;
+            panel11.BackColor = Color.DeepSkyBlue;
             panel11.Controls.Add(label13);
             panel11.Controls.Add(label12);
             panel11.Controls.Add(label11);
@@ -310,6 +310,116 @@
             panel11.Name = "panel11";
             panel11.Size = new Size(888, 583);
             panel11.TabIndex = 11;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label13.Location = new Point(222, 365);
+            label13.Name = "label13";
+            label13.Size = new Size(215, 25);
+            label13.TabIndex = 13;
+            label13.Text = "Tỉnh Lâm Đồng, Việt Nam";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.Location = new Point(222, 312);
+            label12.Name = "label12";
+            label12.Size = new Size(217, 25);
+            label12.TabIndex = 12;
+            label12.Text = "23520928@gm.uit.edu.vn";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.Location = new Point(222, 253);
+            label11.Name = "label11";
+            label11.Size = new Size(304, 25);
+            label11.TabIndex = 11;
+            label11.Text = "Trường Đại học Công nghệ thông tin";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.Location = new Point(222, 194);
+            label10.Name = "label10";
+            label10.Size = new Size(122, 25);
+            label10.TabIndex = 10;
+            label10.Text = "0868 676 140";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.Location = new Point(222, 142);
+            label9.Name = "label9";
+            label9.Size = new Size(36, 25);
+            label9.TabIndex = 9;
+            label9.Text = "Nữ";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(222, 93);
+            label8.Name = "label8";
+            label8.Size = new Size(74, 25);
+            label8.TabIndex = 8;
+            label8.Text = "Lê Minh";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(75, 368);
+            label7.Name = "label7";
+            label7.Size = new Size(75, 25);
+            label7.TabIndex = 7;
+            label7.Text = "Địa chỉ:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(75, 312);
+            label6.Name = "label6";
+            label6.Size = new Size(63, 25);
+            label6.TabIndex = 6;
+            label6.Text = "Email:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(75, 253);
+            label5.Name = "label5";
+            label5.Size = new Size(72, 25);
+            label5.TabIndex = 5;
+            label5.Text = "Đơn vị:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(75, 194);
+            label4.Name = "label4";
+            label4.Size = new Size(129, 25);
+            label4.TabIndex = 4;
+            label4.Text = "Số điện thoại:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(75, 142);
+            label3.Name = "label3";
+            label3.Size = new Size(90, 25);
+            label3.TabIndex = 3;
+            label3.Text = "Giới tính:";
             // 
             // label2
             // 
@@ -331,124 +441,14 @@
             label1.TabIndex = 1;
             label1.Text = "Thông tin cá nhân";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(75, 142);
-            label3.Name = "label3";
-            label3.Size = new Size(90, 25);
-            label3.TabIndex = 3;
-            label3.Text = "Giới tính:";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(75, 194);
-            label4.Name = "label4";
-            label4.Size = new Size(129, 25);
-            label4.TabIndex = 4;
-            label4.Text = "Số điện thoại:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(75, 253);
-            label5.Name = "label5";
-            label5.Size = new Size(72, 25);
-            label5.TabIndex = 5;
-            label5.Text = "Đơn vị:";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(75, 312);
-            label6.Name = "label6";
-            label6.Size = new Size(63, 25);
-            label6.TabIndex = 6;
-            label6.Text = "Email:";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(75, 368);
-            label7.Name = "label7";
-            label7.Size = new Size(75, 25);
-            label7.TabIndex = 7;
-            label7.Text = "Địa chỉ:";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(222, 93);
-            label8.Name = "label8";
-            label8.Size = new Size(74, 25);
-            label8.TabIndex = 8;
-            label8.Text = "Lê Minh";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(222, 142);
-            label9.Name = "label9";
-            label9.Size = new Size(36, 25);
-            label9.TabIndex = 9;
-            label9.Text = "Nữ";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(222, 194);
-            label10.Name = "label10";
-            label10.Size = new Size(122, 25);
-            label10.TabIndex = 10;
-            label10.Text = "0868 676 140";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(222, 253);
-            label11.Name = "label11";
-            label11.Size = new Size(304, 25);
-            label11.TabIndex = 11;
-            label11.Text = "Trường Đại học Công nghệ thông tin";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.Location = new Point(222, 312);
-            label12.Name = "label12";
-            label12.Size = new Size(217, 25);
-            label12.TabIndex = 12;
-            label12.Text = "23520928@gm.uit.edu.vn";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label13.Location = new Point(222, 365);
-            label13.Name = "label13";
-            label13.Size = new Size(215, 25);
-            label13.TabIndex = 13;
-            label13.Text = "Tỉnh Lâm Đồng, Việt Nam";
-            // 
             // member_details
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(panel11);
             Controls.Add(panel10);
             Controls.Add(panel9);
             Controls.Add(panel5);
+            Controls.Add(panel11);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel1);
