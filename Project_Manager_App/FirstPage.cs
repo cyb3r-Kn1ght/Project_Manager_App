@@ -15,7 +15,17 @@ namespace Project_Manager_App
         public FirstPage()
         {
             InitializeComponent();
-           
+
+        }
+
+        private void headerUserControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void content_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
