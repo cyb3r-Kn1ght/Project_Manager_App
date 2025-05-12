@@ -10,28 +10,39 @@ using System.Windows.Forms;
 
 namespace Project_Manager_App
 {
-    public partial class member: UserControl
+    // member.cs
+    public partial class member : UserControl
     {
         public member()
         {
             InitializeComponent();
+            label_name.Click += Label_name_Click; // Đăng ký sự kiện click cho label_name
         }
 
-        [Browsable(false)]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public string MemberName
+        // Thuộc tính cho Username
+        public string Username
         {
-            get => label_name.Text;
-            set => label_name.Text = value;
+            get { return label_name.Text; }
+            set { label_name.Text = value; }
         }
 
-        // Property để set vai trò
-        [Browsable(false)]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public string MemberRole
+        // Thuộc tính cho Role
+        public string Role
         {
-            get => label_role.Text;
-            set => label_role.Text = value;
+            get { return label_role.Text; }
+            set { label_role.Text = value; }
+        }
+
+        private void Label_name_Click(object sender, EventArgs e)
+        {
+            // Khi nhấn vào label_name, hiển thị member_details của member đó
+            member_details memberDetailsControl = new member_details();
+            memberDetailsControl.ShowMemberDetails(Username);  // Truyền Username vào phương thức ShowMemberDetails
+
+            // Tìm form chính để load member_details
+            Main mainForm = (Main)Application.OpenForms["Main"];
+            mainForm.LoadUserControl(memberDetailsControl);  // Quay lại UserControl trong Main
         }
     }
+
 }

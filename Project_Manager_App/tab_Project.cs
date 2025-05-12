@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Project_Manager_App.Models;
+
 
 
 namespace Project_Manager_App
@@ -25,13 +25,13 @@ namespace Project_Manager_App
         }
 
         // Hàm để load dữ liệu và cập nhật giao diện
-        public void LoadData(ProjectData projectData)
+        /* public void LoadData(ProjectData projectData)
         {
             // Gán dữ liệu từ ProjectData vào các thành phần giao diện
             label_nameProject.Text = projectData.Title;
             pic_Project.Image = Image.FromFile(projectData.ImagePath);
             processBarofProject.Value = projectData.Progress;
-        }
+        } */
 
         private void img_Project_Click(object sender, EventArgs e)
         {

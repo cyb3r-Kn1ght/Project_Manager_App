@@ -35,6 +35,7 @@
             // label_name
             // 
             label_name.AutoSize = true;
+            label_name.Cursor = Cursors.Hand;
             label_name.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_name.Location = new Point(44, 22);
             label_name.Name = "label_name";
@@ -46,7 +47,7 @@
             // 
             label_role.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label_role.AutoSize = true;
-            label_role.Location = new Point(883, 28);
+            label_role.Location = new Point(1011, 28);
             label_role.Name = "label_role";
             label_role.Size = new Size(63, 25);
             label_role.TabIndex = 1;
@@ -60,7 +61,7 @@
             Controls.Add(label_role);
             Controls.Add(label_name);
             Name = "member";
-            Size = new Size(1050, 81);
+            Size = new Size(1178, 81);
             ResumeLayout(false);
             PerformLayout();
         }
