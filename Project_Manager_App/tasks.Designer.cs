@@ -44,14 +44,14 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(827, 95);
+            panel1.Size = new Size(955, 95);
             panel1.TabIndex = 2;
             // 
             // label_day
             // 
             label_day.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label_day.AutoSize = true;
-            label_day.Location = new Point(645, 14);
+            label_day.Location = new Point(773, 14);
             label_day.Name = "label_day";
             label_day.Size = new Size(43, 25);
             label_day.TabIndex = 3;
@@ -61,7 +61,7 @@
             // 
             label_hour.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label_hour.AutoSize = true;
-            label_hour.Location = new Point(645, 48);
+            label_hour.Location = new Point(773, 48);
             label_hour.Name = "label_hour";
             label_hour.Size = new Size(52, 25);
             label_hour.TabIndex = 2;
@@ -84,7 +84,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel1);
             Name = "tasks";
-            Size = new Size(827, 95);
+            Size = new Size(955, 95);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

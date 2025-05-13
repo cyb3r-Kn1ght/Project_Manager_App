@@ -77,9 +77,9 @@
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 12F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 13.043478F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 86.95652F));
             tableLayoutPanel1.Size = new Size(1316, 775);
             tableLayoutPanel1.TabIndex = 11;
             // 
@@ -89,9 +89,9 @@
             panel_descript.Controls.Add(richTextBox_Descript);
             panel_descript.Controls.Add(label_Descript);
             panel_descript.Dock = DockStyle.Fill;
-            panel_descript.Location = new Point(3, 65);
+            panel_descript.Location = new Point(3, 53);
             panel_descript.Name = "panel_descript";
-            panel_descript.Size = new Size(1310, 87);
+            panel_descript.Size = new Size(1310, 88);
             panel_descript.TabIndex = 1;
             // 
             // richTextBox_Descript
@@ -101,7 +101,7 @@
             richTextBox_Descript.Location = new Point(8, 28);
             richTextBox_Descript.Name = "richTextBox_Descript";
             richTextBox_Descript.ReadOnly = true;
-            richTextBox_Descript.Size = new Size(1264, 25);
+            richTextBox_Descript.Size = new Size(1264, 56);
             richTextBox_Descript.TabIndex = 1;
             richTextBox_Descript.TabStop = false;
             richTextBox_Descript.Text = "Nội dung mô tả";
@@ -124,7 +124,7 @@
             panel_header.Dock = DockStyle.Fill;
             panel_header.Location = new Point(3, 3);
             panel_header.Name = "panel_header";
-            panel_header.Size = new Size(1310, 56);
+            panel_header.Size = new Size(1310, 44);
             panel_header.TabIndex = 0;
             // 
             // pictureBox1
@@ -156,11 +156,11 @@
             tableLayoutPanel2.Controls.Add(panel_joblist, 1, 0);
             tableLayoutPanel2.Controls.Add(tableLayoutPanel3, 0, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(3, 158);
+            tableLayoutPanel2.Location = new Point(3, 147);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1310, 614);
+            tableLayoutPanel2.Size = new Size(1310, 625);
             tableLayoutPanel2.TabIndex = 2;
             // 
             // panel_joblist
@@ -171,7 +171,7 @@
             panel_joblist.Dock = DockStyle.Fill;
             panel_joblist.Location = new Point(396, 3);
             panel_joblist.Name = "panel_joblist";
-            panel_joblist.Size = new Size(911, 608);
+            panel_joblist.Size = new Size(911, 619);
             panel_joblist.TabIndex = 10;
             // 
             // label_joblist
@@ -211,7 +211,7 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 19.0476189F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 28.5714283F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel3.Size = new Size(387, 608);
+            tableLayoutPanel3.Size = new Size(387, 619);
             tableLayoutPanel3.TabIndex = 0;
             // 
             // panel_newActivity
@@ -220,19 +220,19 @@
             panel_newActivity.Controls.Add(richTextBox_newActivity);
             panel_newActivity.Controls.Add(label_newactivity);
             panel_newActivity.Dock = DockStyle.Fill;
-            panel_newActivity.Location = new Point(3, 435);
+            panel_newActivity.Location = new Point(3, 443);
             panel_newActivity.Name = "panel_newActivity";
-            panel_newActivity.Size = new Size(381, 170);
+            panel_newActivity.Size = new Size(381, 173);
             panel_newActivity.TabIndex = 5;
             // 
             // richTextBox_newActivity
             // 
             richTextBox_newActivity.BackColor = Color.DeepSkyBlue;
             richTextBox_newActivity.BorderStyle = BorderStyle.None;
-            richTextBox_newActivity.Location = new Point(8, 28);
+            richTextBox_newActivity.Location = new Point(2, 28);
             richTextBox_newActivity.Name = "richTextBox_newActivity";
             richTextBox_newActivity.ReadOnly = true;
-            richTextBox_newActivity.Size = new Size(355, 139);
+            richTextBox_newActivity.Size = new Size(376, 139);
             richTextBox_newActivity.TabIndex = 1;
             richTextBox_newActivity.TabStop = false;
             richTextBox_newActivity.Text = "Hoạt động mới nhất ở đây";
@@ -243,9 +243,9 @@
             label_newactivity.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_newactivity.Location = new Point(0, 0);
             label_newactivity.Name = "label_newactivity";
-            label_newactivity.Size = new Size(140, 25);
+            label_newactivity.Size = new Size(153, 25);
             label_newactivity.TabIndex = 0;
-            label_newactivity.Text = "Hoạt động mới";
+            label_newactivity.Text = "Thời gian còn lại";
             // 
             // panel_member
             // 
@@ -253,19 +253,19 @@
             panel_member.Controls.Add(richTextBox_member);
             panel_member.Controls.Add(label_member);
             panel_member.Dock = DockStyle.Fill;
-            panel_member.Location = new Point(3, 320);
+            panel_member.Location = new Point(3, 326);
             panel_member.Name = "panel_member";
-            panel_member.Size = new Size(381, 109);
+            panel_member.Size = new Size(381, 111);
             panel_member.TabIndex = 4;
             // 
             // richTextBox_member
             // 
             richTextBox_member.BackColor = Color.DeepSkyBlue;
             richTextBox_member.BorderStyle = BorderStyle.None;
-            richTextBox_member.Location = new Point(8, 28);
+            richTextBox_member.Location = new Point(3, 28);
             richTextBox_member.Name = "richTextBox_member";
             richTextBox_member.ReadOnly = true;
-            richTextBox_member.Size = new Size(355, 78);
+            richTextBox_member.Size = new Size(375, 78);
             richTextBox_member.TabIndex = 8;
             richTextBox_member.TabStop = false;
             richTextBox_member.Text = "Các thành viên";
@@ -286,9 +286,9 @@
             panel_file.Controls.Add(label_file);
             panel_file.Controls.Add(richTextBox_file);
             panel_file.Dock = DockStyle.Fill;
-            panel_file.Location = new Point(3, 89);
+            panel_file.Location = new Point(3, 91);
             panel_file.Name = "panel_file";
-            panel_file.Size = new Size(381, 225);
+            panel_file.Size = new Size(381, 229);
             panel_file.TabIndex = 3;
             // 
             // label_file
@@ -305,10 +305,10 @@
             // 
             richTextBox_file.BackColor = Color.DeepSkyBlue;
             richTextBox_file.BorderStyle = BorderStyle.None;
-            richTextBox_file.Location = new Point(8, 28);
+            richTextBox_file.Location = new Point(2, 28);
             richTextBox_file.Name = "richTextBox_file";
             richTextBox_file.ReadOnly = true;
-            richTextBox_file.Size = new Size(355, 194);
+            richTextBox_file.Size = new Size(376, 194);
             richTextBox_file.TabIndex = 7;
             richTextBox_file.TabStop = false;
             richTextBox_file.Text = "Các file đính kèm";
@@ -321,17 +321,17 @@
             panel_deadline.Dock = DockStyle.Fill;
             panel_deadline.Location = new Point(3, 3);
             panel_deadline.Name = "panel_deadline";
-            panel_deadline.Size = new Size(381, 80);
+            panel_deadline.Size = new Size(381, 82);
             panel_deadline.TabIndex = 2;
             // 
             // richTextBox_Deadline
             // 
             richTextBox_Deadline.BackColor = Color.DeepSkyBlue;
             richTextBox_Deadline.BorderStyle = BorderStyle.None;
-            richTextBox_Deadline.Location = new Point(8, 28);
+            richTextBox_Deadline.Location = new Point(3, 28);
             richTextBox_Deadline.Name = "richTextBox_Deadline";
             richTextBox_Deadline.ReadOnly = true;
-            richTextBox_Deadline.Size = new Size(355, 49);
+            richTextBox_Deadline.Size = new Size(375, 49);
             richTextBox_Deadline.TabIndex = 6;
             richTextBox_Deadline.TabStop = false;
             richTextBox_Deadline.Text = "Thời gian Deadline";
@@ -353,7 +353,6 @@
             Controls.Add(tableLayoutPanel1);
             Name = "TaskDetail";
             Size = new Size(1316, 775);
-            Load += TaskDetail_Load;
             tableLayoutPanel1.ResumeLayout(false);
             panel_descript.ResumeLayout(false);
             panel_descript.PerformLayout();

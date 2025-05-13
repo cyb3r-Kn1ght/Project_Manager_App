@@ -123,9 +123,59 @@ namespace Project_Manager_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap kham_pha_tri_tue_nhan_tao_ai_la_gi_va_tai_sao_no_quan_trong {
+            get {
+                object obj = ResourceManager.GetObject("kham-pha-tri-tue-nhan-tao-ai-la-gi-va-tai-sao-no-quan-trong", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kham_pha_tri_tue_nhan_tao_ai_la_gi_va_tai_sao_no_quan_trong1 {
+            get {
+                object obj = ResourceManager.GetObject("kham-pha-tri-tue-nhan-tao-ai-la-gi-va-tai-sao-no-quan-trong1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap kindpng_5527945 {
             get {
                 object obj = ResourceManager.GetObject("kindpng_5527945", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lam_dep_code {
+            get {
+                object obj = ResourceManager.GetObject("Lam-dep-code", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nasa_server_hack {
+            get {
+                object obj = ResourceManager.GetObject("nasa-server-hack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap no_img {
+            get {
+                object obj = ResourceManager.GetObject("no_img", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +216,16 @@ namespace Project_Manager_App.Properties {
         internal static System.Drawing.Bitmap settings_24dp_000000_FILL0_wght400_GRAD0_opsz24 {
             get {
                 object obj = ResourceManager.GetObject("settings_24dp_000000_FILL0_wght400_GRAD0_opsz24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tai_xuong {
+            get {
+                object obj = ResourceManager.GetObject("tai-xuong", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
