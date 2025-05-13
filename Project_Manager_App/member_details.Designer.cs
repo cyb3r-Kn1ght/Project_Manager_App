@@ -32,32 +32,29 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
-            label_ProjectName = new Label();
+            label_Username = new Label();
             panel3 = new Panel();
-            richTextBox_Descript = new RichTextBox();
-            label_Descript = new Label();
+            richTextBox_AllProject = new RichTextBox();
+            label_AllProject = new Label();
             panel4 = new Panel();
-            richTextBox_Deadline = new RichTextBox();
-            label_Deadline = new Label();
+            richTextBox_Done = new RichTextBox();
+            label_Done = new Label();
             panel5 = new Panel();
-            richTextBox_file = new RichTextBox();
-            label_file = new Label();
-            panel7 = new Panel();
-            panel8 = new Panel();
-            panel6 = new Panel();
+            richTextBox_Doing = new RichTextBox();
+            label_Doing = new Label();
             panel9 = new Panel();
-            richTextBox_member = new RichTextBox();
-            label_member = new Label();
+            richTextBox_ToDo = new RichTextBox();
+            label_ToDo = new Label();
             panel10 = new Panel();
-            richTextBox_newactivity = new RichTextBox();
-            label_newactivity = new Label();
+            richTextBox_AllDeadline = new RichTextBox();
+            label_AllDeadline = new Label();
             panel11 = new Panel();
-            label13 = new Label();
-            label12 = new Label();
-            label11 = new Label();
-            label10 = new Label();
-            label9 = new Label();
-            label8 = new Label();
+            label_address = new Label();
+            label_email = new Label();
+            label_role = new Label();
+            label_phone = new Label();
+            label_sex = new Label();
+            label_name = new Label();
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
@@ -65,15 +62,20 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            tableLayoutPanel3 = new TableLayoutPanel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
-            panel7.SuspendLayout();
             panel9.SuspendLayout();
             panel10.SuspendLayout();
             panel11.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -81,12 +83,11 @@
             panel1.BackColor = Color.DeepSkyBlue;
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(panel2);
-            panel1.Controls.Add(label_ProjectName);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Controls.Add(label_Username);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1048, 38);
+            panel1.Size = new Size(1304, 44);
             panel1.TabIndex = 1;
             // 
             // pictureBox1
@@ -110,218 +111,185 @@
             panel2.Size = new Size(1049, 140);
             panel2.TabIndex = 2;
             // 
-            // label_ProjectName
+            // label_Username
             // 
-            label_ProjectName.AutoSize = true;
-            label_ProjectName.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_ProjectName.Location = new Point(144, 1);
-            label_ProjectName.Margin = new Padding(2, 0, 2, 0);
-            label_ProjectName.Name = "label_ProjectName";
-            label_ProjectName.Size = new Size(105, 32);
-            label_ProjectName.TabIndex = 0;
-            label_ProjectName.Text = "Lê Minh";
+            label_Username.AutoSize = true;
+            label_Username.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_Username.Location = new Point(180, 1);
+            label_Username.Name = "label_Username";
+            label_Username.Size = new Size(123, 38);
+            label_Username.TabIndex = 0;
+            label_Username.Text = "Lê Minh";
             // 
             // panel3
             // 
             panel3.BackColor = Color.DeepSkyBlue;
-            panel3.Controls.Add(richTextBox_Descript);
-            panel3.Controls.Add(label_Descript);
-            panel3.Location = new Point(12, 53);
-            panel3.Margin = new Padding(2, 2, 2, 2);
+            panel3.Controls.Add(richTextBox_AllProject);
+            panel3.Controls.Add(label_AllProject);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(3, 53);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1029, 56);
+            panel3.Size = new Size(1304, 68);
             panel3.TabIndex = 2;
             // 
-            // richTextBox_Descript
+            // richTextBox_AllProject
             // 
-            richTextBox_Descript.BackColor = Color.DeepSkyBlue;
-            richTextBox_Descript.BorderStyle = BorderStyle.None;
-            richTextBox_Descript.Location = new Point(6, 22);
-            richTextBox_Descript.Margin = new Padding(2, 2, 2, 2);
-            richTextBox_Descript.Name = "richTextBox_Descript";
-            richTextBox_Descript.Size = new Size(1011, 32);
-            richTextBox_Descript.TabIndex = 1;
-            richTextBox_Descript.Text = "Tên dự án";
+            richTextBox_AllProject.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            richTextBox_AllProject.BackColor = Color.DeepSkyBlue;
+            richTextBox_AllProject.BorderStyle = BorderStyle.None;
+            richTextBox_AllProject.Location = new Point(0, 28);
+            richTextBox_AllProject.Name = "richTextBox_AllProject";
+            richTextBox_AllProject.Size = new Size(1304, 40);
+            richTextBox_AllProject.TabIndex = 1;
+            richTextBox_AllProject.Text = "Tên dự án";
             // 
-            // label_Descript
+            // label_AllProject
             // 
-            label_Descript.AutoSize = true;
-            label_Descript.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_Descript.Location = new Point(0, 0);
-            label_Descript.Margin = new Padding(2, 0, 2, 0);
-            label_Descript.Name = "label_Descript";
-            label_Descript.Size = new Size(117, 20);
-            label_Descript.TabIndex = 0;
-            label_Descript.Text = "Dự án tham gia";
+            label_AllProject.AutoSize = true;
+            label_AllProject.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_AllProject.Location = new Point(0, 0);
+            label_AllProject.Name = "label_AllProject";
+            label_AllProject.Size = new Size(143, 25);
+            label_AllProject.TabIndex = 0;
+            label_AllProject.Text = "Dự án tham gia";
             // 
             // panel4
             // 
             panel4.BackColor = Color.DeepSkyBlue;
-            panel4.Controls.Add(richTextBox_Deadline);
-            panel4.Controls.Add(label_Deadline);
-            panel4.Location = new Point(12, 122);
-            panel4.Margin = new Padding(2, 2, 2, 2);
+            panel4.Controls.Add(richTextBox_Done);
+            panel4.Controls.Add(label_Done);
+            panel4.Dock = DockStyle.Fill;
+            panel4.Location = new Point(3, 3);
             panel4.Name = "panel4";
-            panel4.Size = new Size(300, 61);
+            panel4.Size = new Size(379, 147);
             panel4.TabIndex = 3;
             // 
-            // richTextBox_Deadline
+            // richTextBox_Done
             // 
-            richTextBox_Deadline.BackColor = Color.DeepSkyBlue;
-            richTextBox_Deadline.BorderStyle = BorderStyle.None;
-            richTextBox_Deadline.Location = new Point(6, 22);
-            richTextBox_Deadline.Margin = new Padding(2, 2, 2, 2);
-            richTextBox_Deadline.Name = "richTextBox_Deadline";
-            richTextBox_Deadline.Size = new Size(284, 37);
-            richTextBox_Deadline.TabIndex = 7;
-            richTextBox_Deadline.Text = "Việc đã hoàn thành";
+            richTextBox_Done.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            richTextBox_Done.BackColor = Color.DeepSkyBlue;
+            richTextBox_Done.BorderStyle = BorderStyle.None;
+            richTextBox_Done.Location = new Point(0, 30);
+            richTextBox_Done.Name = "richTextBox_Done";
+            richTextBox_Done.Size = new Size(379, 117);
+            richTextBox_Done.TabIndex = 7;
+            richTextBox_Done.Text = "Việc đã hoàn thành";
             // 
-            // label_Deadline
+            // label_Done
             // 
-            label_Deadline.AutoSize = true;
-            label_Deadline.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_Deadline.Location = new Point(0, 0);
-            label_Deadline.Margin = new Padding(2, 0, 2, 0);
-            label_Deadline.Name = "label_Deadline";
-            label_Deadline.Size = new Size(112, 20);
-            label_Deadline.TabIndex = 0;
-            label_Deadline.Text = "Đã hoàn thành";
+            label_Done.AutoSize = true;
+            label_Done.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_Done.Location = new Point(0, 0);
+            label_Done.Name = "label_Done";
+            label_Done.Size = new Size(138, 25);
+            label_Done.TabIndex = 0;
+            label_Done.Text = "Đã hoàn thành";
             // 
             // panel5
             // 
             panel5.BackColor = Color.DeepSkyBlue;
-            panel5.Controls.Add(richTextBox_file);
-            panel5.Controls.Add(label_file);
-            panel5.Controls.Add(panel7);
-            panel5.Controls.Add(panel6);
-            panel5.Location = new Point(12, 197);
-            panel5.Margin = new Padding(2, 2, 2, 2);
+            panel5.Controls.Add(richTextBox_Doing);
+            panel5.Controls.Add(label_Doing);
+            panel5.Dock = DockStyle.Fill;
+            panel5.Location = new Point(3, 156);
             panel5.Name = "panel5";
-            panel5.Size = new Size(300, 130);
+            panel5.Size = new Size(379, 147);
             panel5.TabIndex = 4;
             // 
-            // richTextBox_file
+            // richTextBox_Doing
             // 
-            richTextBox_file.BackColor = Color.DeepSkyBlue;
-            richTextBox_file.BorderStyle = BorderStyle.None;
-            richTextBox_file.Location = new Point(6, 22);
-            richTextBox_file.Margin = new Padding(2, 2, 2, 2);
-            richTextBox_file.Name = "richTextBox_file";
-            richTextBox_file.Size = new Size(284, 105);
-            richTextBox_file.TabIndex = 8;
-            richTextBox_file.Text = "Việc đang thực hiện";
+            richTextBox_Doing.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            richTextBox_Doing.BackColor = Color.DeepSkyBlue;
+            richTextBox_Doing.BorderStyle = BorderStyle.None;
+            richTextBox_Doing.Location = new Point(0, 31);
+            richTextBox_Doing.Name = "richTextBox_Doing";
+            richTextBox_Doing.Size = new Size(379, 116);
+            richTextBox_Doing.TabIndex = 8;
+            richTextBox_Doing.Text = "Việc đang thực hiện";
             // 
-            // label_file
+            // label_Doing
             // 
-            label_file.AutoSize = true;
-            label_file.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_file.Location = new Point(0, 0);
-            label_file.Margin = new Padding(2, 0, 2, 0);
-            label_file.Name = "label_file";
-            label_file.Size = new Size(116, 20);
-            label_file.TabIndex = 6;
-            label_file.Text = "Đang thực hiện";
-            // 
-            // panel7
-            // 
-            panel7.Controls.Add(panel8);
-            panel7.Location = new Point(0, 159);
-            panel7.Margin = new Padding(2, 2, 2, 2);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(300, 92);
-            panel7.TabIndex = 5;
-            // 
-            // panel8
-            // 
-            panel8.Location = new Point(6, 159);
-            panel8.Margin = new Padding(2, 2, 2, 2);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(300, 119);
-            panel8.TabIndex = 4;
-            // 
-            // panel6
-            // 
-            panel6.Location = new Point(6, 159);
-            panel6.Margin = new Padding(2, 2, 2, 2);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(300, 119);
-            panel6.TabIndex = 4;
+            label_Doing.AutoSize = true;
+            label_Doing.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_Doing.Location = new Point(0, 0);
+            label_Doing.Name = "label_Doing";
+            label_Doing.Size = new Size(143, 25);
+            label_Doing.TabIndex = 6;
+            label_Doing.Text = "Đang thực hiện";
             // 
             // panel9
             // 
             panel9.BackColor = Color.DeepSkyBlue;
-            panel9.Controls.Add(richTextBox_member);
-            panel9.Controls.Add(label_member);
-            panel9.Location = new Point(12, 338);
-            panel9.Margin = new Padding(2, 2, 2, 2);
+            panel9.Controls.Add(richTextBox_ToDo);
+            panel9.Controls.Add(label_ToDo);
+            panel9.Dock = DockStyle.Fill;
+            panel9.Location = new Point(3, 309);
             panel9.Name = "panel9";
-            panel9.Size = new Size(300, 99);
+            panel9.Size = new Size(379, 147);
             panel9.TabIndex = 5;
             // 
-            // richTextBox_member
+            // richTextBox_ToDo
             // 
-            richTextBox_member.BackColor = Color.DeepSkyBlue;
-            richTextBox_member.BorderStyle = BorderStyle.None;
-            richTextBox_member.Location = new Point(6, 22);
-            richTextBox_member.Margin = new Padding(2, 2, 2, 2);
-            richTextBox_member.Name = "richTextBox_member";
-            richTextBox_member.Size = new Size(280, 74);
-            richTextBox_member.TabIndex = 8;
-            richTextBox_member.Text = "Các việc cần làm";
+            richTextBox_ToDo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            richTextBox_ToDo.BackColor = Color.DeepSkyBlue;
+            richTextBox_ToDo.BorderStyle = BorderStyle.None;
+            richTextBox_ToDo.Location = new Point(2, 28);
+            richTextBox_ToDo.Name = "richTextBox_ToDo";
+            richTextBox_ToDo.Size = new Size(374, 116);
+            richTextBox_ToDo.TabIndex = 8;
+            richTextBox_ToDo.Text = "Các việc cần làm";
             // 
-            // label_member
+            // label_ToDo
             // 
-            label_member.AutoSize = true;
-            label_member.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_member.Location = new Point(0, 0);
-            label_member.Margin = new Padding(2, 0, 2, 0);
-            label_member.Name = "label_member";
-            label_member.Size = new Size(96, 20);
-            label_member.TabIndex = 0;
-            label_member.Text = "Việc cần làm";
+            label_ToDo.AutoSize = true;
+            label_ToDo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_ToDo.Location = new Point(0, 0);
+            label_ToDo.Name = "label_ToDo";
+            label_ToDo.Size = new Size(119, 25);
+            label_ToDo.TabIndex = 0;
+            label_ToDo.Text = "Việc cần làm";
             // 
             // panel10
             // 
             panel10.BackColor = Color.DeepSkyBlue;
-            panel10.Controls.Add(richTextBox_newactivity);
-            panel10.Controls.Add(label_newactivity);
-            panel10.Location = new Point(12, 453);
-            panel10.Margin = new Padding(2, 2, 2, 2);
+            panel10.Controls.Add(richTextBox_AllDeadline);
+            panel10.Controls.Add(label_AllDeadline);
+            panel10.Dock = DockStyle.Fill;
+            panel10.Location = new Point(3, 462);
             panel10.Name = "panel10";
-            panel10.Size = new Size(300, 136);
+            panel10.Size = new Size(379, 148);
             panel10.TabIndex = 6;
             // 
-            // richTextBox_newactivity
+            // richTextBox_AllDeadline
             // 
-            richTextBox_newactivity.BackColor = Color.DeepSkyBlue;
-            richTextBox_newactivity.BorderStyle = BorderStyle.None;
-            richTextBox_newactivity.Location = new Point(6, 31);
-            richTextBox_newactivity.Margin = new Padding(2, 2, 2, 2);
-            richTextBox_newactivity.Name = "richTextBox_newactivity";
-            richTextBox_newactivity.Size = new Size(284, 102);
-            richTextBox_newactivity.TabIndex = 9;
-            richTextBox_newactivity.Text = "Hoạt động mới nhất của user";
+            richTextBox_AllDeadline.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            richTextBox_AllDeadline.BackColor = Color.DeepSkyBlue;
+            richTextBox_AllDeadline.BorderStyle = BorderStyle.None;
+            richTextBox_AllDeadline.Location = new Point(0, 31);
+            richTextBox_AllDeadline.Name = "richTextBox_AllDeadline";
+            richTextBox_AllDeadline.Size = new Size(379, 117);
+            richTextBox_AllDeadline.TabIndex = 9;
+            richTextBox_AllDeadline.Text = "Hoạt động mới nhất của user";
             // 
-            // label_newactivity
+            // label_AllDeadline
             // 
-            label_newactivity.AutoSize = true;
-            label_newactivity.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_newactivity.Location = new Point(0, 0);
-            label_newactivity.Margin = new Padding(2, 0, 2, 0);
-            label_newactivity.Name = "label_newactivity";
-            label_newactivity.Size = new Size(114, 20);
-            label_newactivity.TabIndex = 0;
-            label_newactivity.Text = "Hoạt động mới";
+            label_AllDeadline.AutoSize = true;
+            label_AllDeadline.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_AllDeadline.Location = new Point(0, 0);
+            label_AllDeadline.Name = "label_AllDeadline";
+            label_AllDeadline.Size = new Size(140, 25);
+            label_AllDeadline.TabIndex = 0;
+            label_AllDeadline.Text = "Hoạt động mới";
             // 
             // panel11
             // 
             panel11.BackColor = Color.DeepSkyBlue;
-            panel11.Controls.Add(label13);
-            panel11.Controls.Add(label12);
-            panel11.Controls.Add(label11);
-            panel11.Controls.Add(label10);
-            panel11.Controls.Add(label9);
-            panel11.Controls.Add(label8);
+            panel11.Controls.Add(label_address);
+            panel11.Controls.Add(label_email);
+            panel11.Controls.Add(label_role);
+            panel11.Controls.Add(label_phone);
+            panel11.Controls.Add(label_sex);
+            panel11.Controls.Add(label_name);
             panel11.Controls.Add(label7);
             panel11.Controls.Add(label6);
             panel11.Controls.Add(label5);
@@ -329,77 +297,71 @@
             panel11.Controls.Add(label3);
             panel11.Controls.Add(label2);
             panel11.Controls.Add(label1);
-            panel11.Location = new Point(330, 122);
-            panel11.Margin = new Padding(2, 2, 2, 2);
+            panel11.Dock = DockStyle.Fill;
+            panel11.Location = new Point(394, 3);
             panel11.Name = "panel11";
-            panel11.Size = new Size(710, 466);
+            panel11.Size = new Size(907, 613);
             panel11.TabIndex = 11;
             // 
-            // label13
+            // label_address
             // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label13.Location = new Point(178, 292);
-            label13.Margin = new Padding(2, 0, 2, 0);
-            label13.Name = "label13";
-            label13.Size = new Size(179, 20);
-            label13.TabIndex = 13;
-            label13.Text = "Tỉnh Lâm Đồng, Việt Nam";
+            label_address.AutoSize = true;
+            label_address.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_address.Location = new Point(222, 365);
+            label_address.Name = "label_address";
+            label_address.Size = new Size(215, 25);
+            label_address.TabIndex = 13;
+            label_address.Text = "Tỉnh Lâm Đồng, Việt Nam";
             // 
-            // label12
+            // label_email
             // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.Location = new Point(178, 250);
-            label12.Margin = new Padding(2, 0, 2, 0);
-            label12.Name = "label12";
-            label12.Size = new Size(175, 20);
-            label12.TabIndex = 12;
-            label12.Text = "23520928@gm.uit.edu.vn";
+            label_email.AutoSize = true;
+            label_email.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_email.Location = new Point(222, 312);
+            label_email.Name = "label_email";
+            label_email.Size = new Size(217, 25);
+            label_email.TabIndex = 12;
+            label_email.Text = "23520928@gm.uit.edu.vn";
             // 
-            // label11
+            // label_role
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(178, 202);
-            label11.Margin = new Padding(2, 0, 2, 0);
-            label11.Name = "label11";
-            label11.Size = new Size(251, 20);
-            label11.TabIndex = 11;
-            label11.Text = "Trường Đại học Công nghệ thông tin";
+            label_role.AutoSize = true;
+            label_role.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_role.Location = new Point(222, 253);
+            label_role.Name = "label_role";
+            label_role.Size = new Size(304, 25);
+            label_role.TabIndex = 11;
+            label_role.Text = "Trường Đại học Công nghệ thông tin";
             // 
-            // label10
+            // label_phone
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(178, 155);
-            label10.Margin = new Padding(2, 0, 2, 0);
-            label10.Name = "label10";
-            label10.Size = new Size(97, 20);
-            label10.TabIndex = 10;
-            label10.Text = "0868 676 140";
+            label_phone.AutoSize = true;
+            label_phone.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_phone.Location = new Point(222, 194);
+            label_phone.Name = "label_phone";
+            label_phone.Size = new Size(122, 25);
+            label_phone.TabIndex = 10;
+            label_phone.Text = "0868 676 140";
             // 
-            // label9
+            // label_sex
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(178, 114);
-            label9.Margin = new Padding(2, 0, 2, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(29, 20);
-            label9.TabIndex = 9;
-            label9.Text = "Nữ";
+            label_sex.AutoSize = true;
+            label_sex.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_sex.Location = new Point(222, 142);
+            label_sex.Name = "label_sex";
+            label_sex.Size = new Size(36, 25);
+            label_sex.TabIndex = 9;
+            label_sex.Text = "Nữ";
             // 
-            // label8
+            // label_name
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(178, 74);
-            label8.Margin = new Padding(2, 0, 2, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(61, 20);
-            label8.TabIndex = 8;
-            label8.Text = "Lê Minh";
+            label_name.AutoSize = true;
+            label_name.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_name.Location = new Point(222, 93);
+            label_name.Name = "label_name";
+            label_name.Size = new Size(74, 25);
+            label_name.TabIndex = 8;
+            label_name.Text = "Lê Minh";
             // 
             // label7
             // 
@@ -430,9 +392,9 @@
             label5.Location = new Point(60, 202);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(58, 20);
+            label5.Size = new Size(73, 25);
             label5.TabIndex = 5;
-            label5.Text = "Đơn vị:";
+            label5.Text = "Vai trò:";
             // 
             // label4
             // 
@@ -478,18 +440,62 @@
             label1.TabIndex = 1;
             label1.Text = "Thông tin cá nhân";
             // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(panel3, 0, 1);
+            tableLayoutPanel1.Controls.Add(panel1, 0, 0);
+            tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 2);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.7142849F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 89.28571F));
+            tableLayoutPanel1.Size = new Size(1310, 749);
+            tableLayoutPanel1.TabIndex = 12;
+            // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 2;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
+            tableLayoutPanel2.Controls.Add(panel11, 1, 0);
+            tableLayoutPanel2.Controls.Add(tableLayoutPanel3, 0, 0);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(3, 127);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.Size = new Size(1304, 619);
+            tableLayoutPanel2.TabIndex = 3;
+            // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.ColumnCount = 1;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel3.Controls.Add(panel10, 0, 3);
+            tableLayoutPanel3.Controls.Add(panel9, 0, 2);
+            tableLayoutPanel3.Controls.Add(panel5, 0, 1);
+            tableLayoutPanel3.Controls.Add(panel4, 0, 0);
+            tableLayoutPanel3.Dock = DockStyle.Fill;
+            tableLayoutPanel3.Location = new Point(3, 3);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 4;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel3.Size = new Size(385, 613);
+            tableLayoutPanel3.TabIndex = 12;
+            // 
             // member_details
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(panel10);
-            Controls.Add(panel9);
-            Controls.Add(panel5);
-            Controls.Add(panel11);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
-            Controls.Add(panel1);
-            Margin = new Padding(2, 2, 2, 2);
+            Controls.Add(tableLayoutPanel1);
             Name = "member_details";
             Size = new Size(1048, 599);
             panel1.ResumeLayout(false);
@@ -501,13 +507,15 @@
             panel4.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
-            panel7.ResumeLayout(false);
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
             panel11.ResumeLayout(false);
             panel11.PerformLayout();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -516,38 +524,38 @@
         private Panel panel1;
         private PictureBox pictureBox1;
         private Panel panel2;
-        private Label label_ProjectName;
+        private Label label_Username;
         private Panel panel3;
-        private RichTextBox richTextBox_Descript;
-        private Label label_Descript;
+        private RichTextBox richTextBox_AllProject;
+        private Label label_AllProject;
         private Panel panel4;
-        private Label label_Deadline;
+        private Label label_Done;
         private Panel panel5;
-        private Label label_file;
-        private Panel panel7;
-        private Panel panel8;
-        private Panel panel6;
+        private Label label_Doing;
         private Panel panel9;
-        private RichTextBox richTextBox_member;
-        private Label label_member;
+        private RichTextBox richTextBox_ToDo;
+        private Label label_ToDo;
         private Panel panel10;
-        private Label label_newactivity;
-        private RichTextBox richTextBox_Deadline;
-        private RichTextBox richTextBox_file;
-        private RichTextBox richTextBox_newactivity;
+        private Label label_AllDeadline;
+        private RichTextBox richTextBox_Done;
+        private RichTextBox richTextBox_AllDeadline;
         private Panel panel11;
         private Label label1;
         private Label label2;
-        private Label label13;
-        private Label label12;
-        private Label label11;
-        private Label label10;
-        private Label label9;
-        private Label label8;
+        private Label label_address;
+        private Label label_email;
+        private Label label_role;
+        private Label label_phone;
+        private Label label_sex;
+        private Label label_name;
         private Label label7;
         private Label label6;
         private Label label5;
         private Label label4;
         private Label label3;
+        private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel tableLayoutPanel2;
+        private TableLayoutPanel tableLayoutPanel3;
+        private RichTextBox richTextBox_Doing;
     }
 }

@@ -1,125 +1,168 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Project_Manager_App
 {
     public partial class project_manager : UserControl
     {
-        // 1. Danh sách sample tasks
-        private readonly List<tasks> allTasks;
-
+        public string currentProjectName{get;set;} = "Project Alpha";
         public project_manager()
         {
             InitializeComponent();
-
-            // 2. Khởi tạo sample data (sau này thay bằng dữ liệu từ DB)
-            allTasks = new List<tasks>
-            {
-                new tasks
-                {
-                    TaskTitle = "Lập kế hoạch dự án",
-                    TaskDate  = DateTime.Today.ToString("dd/MM/yyyy"),
-                    TaskTime  = "09:00",
-                    Status    = TaskStatus.NeedToDo
-                },
-                new tasks
-                {
-                    TaskTitle = "Thiết kế giao diện",
-                    TaskDate  = DateTime.Today.ToString("dd/MM/yyyy"),
-                    TaskTime  = "11:00",
-                    Status    = TaskStatus.NeedToDo
-                },
-                new tasks
-                {
-                    TaskTitle = "Phát triển module A",
-                    TaskDate  = DateTime.Today.ToString("dd/MM/yyyy"),
-                    TaskTime  = "14:00",
-                    Status    = TaskStatus.IsDoing
-                },
-                new tasks
-                {
-                    TaskTitle = "Tối ưu hiệu năng",
-                    TaskDate  = DateTime.Today.ToString("dd/MM/yyyy"),
-                    TaskTime  = "16:30",
-                    Status    = TaskStatus.IsDoing
-                },
-                new tasks
-                {
-                    TaskTitle = "Kiểm thử và bàn giao",
-                    TaskDate  = DateTime.Today.AddDays(-1).ToString("dd/MM/yyyy"),
-                    TaskTime  = "15:00",
-                    Status    = TaskStatus.Done
-                },
-                new tasks
-                {
-                    TaskTitle = "Hoàn thiện báo cáo",
-                    TaskDate  = DateTime.Today.AddDays(-1).ToString("dd/MM/yyyy"),
-                    TaskTime  = "17:30",
-                    Status    = TaskStatus.Done
-                }
-            };
-
-            // 3. Gắn event cho các nút
-            button_havetodo.Click += (s, e) => ShowTasks(TaskStatus.NeedToDo);
-            button_IsDoing.Click += (s, e) => ShowTasks(TaskStatus.IsDoing);
-            button_Finished.Click += (s, e) => ShowTasks(TaskStatus.Done);
-
-            button_member.Click += (s, e) =>
-            {
-                var ml = new memberlist
-                {
-                    Dock = DockStyle.Fill
-                };
-                // Load memberlist lên Form chính
-                (this.FindForm() as Main)?.LoadUserControl(ml);
-            };
-
-            // 4. Mặc định hiển thị "Việc cần làm"
-            ShowTasks(TaskStatus.NeedToDo);
+            LoadProjectName();
+            LoadTasks();  // Load tasks when the control is created
+            button_member.Click += Button_member_Click;
         }
 
-        // Hàm lọc và render tasks lên flowTaskList
-        private void ShowTasks(TaskStatus filterStatus)
+        private void Button_member_Click(object sender, EventArgs e)
         {
-            // 1) Clear và highlight lại menu
-            flowTaskList.Controls.Clear();
-
-            // 2) Lọc và add từng task
-            foreach (var t in allTasks.Where(x => x.Status == filterStatus))
+            // Tạo và hiển thị memberlist
+            memberlist memberListControl = new memberlist(currentProjectName);
+            Main mainForm = (Main)Application.OpenForms["Main"];
+            mainForm.LoadUserControl(memberListControl);
+        }
+        private void LoadProjectName()
+        {
+            try
             {
+                string connectionString = "Server=localhost\\SQLEXPRESS;Database=ProjectManagerDB;Trusted_Connection=True;Encrypt=False";
+                string query = "SELECT ProjectName FROM Projects WHERE ProjectName = @currentProjectName";  // You can change this query if needed
 
-                // tránh đăng ký nhiều lần
-                t.TaskClicked -= OnTaskClicked;
-                t.TaskClicked += OnTaskClicked;
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    adapter.SelectCommand.Parameters.AddWithValue("@currentProjectName", currentProjectName);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
 
-                flowTaskList.Controls.Add(t);
+                    if (dt.Rows.Count > 0)
+                    {
+                        label_ProjectName.Text = dt.Rows[0]["ProjectName"].ToString(); // Set project name to label_ProjectName
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Lỗi kết nối SQL Server: {ex.Message}", "Lỗi kết nối", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void LoadTasks()
+        {
+            try
+            {
+                string connectionString = "Server=localhost\\SQLEXPRESS;Database=ProjectManagerDB;Trusted_Connection=True;Encrypt=False";
+                string query = "SELECT TaskId, Content, taskStatus, Finish_date FROM Tasks WHERE ProjectId = (SELECT ProjectId FROM Projects WHERE ProjectName = @currentProjectName)";
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    adapter.SelectCommand.Parameters.AddWithValue("@currentProjectName", currentProjectName);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    // Clear existing controls in flowTaskList
+                    flowTaskList.Controls.Clear();
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        string taskStatus = row["taskStatus"].ToString();
+                        string content = row["Content"].ToString();
+                        DateTime finishDate = Convert.ToDateTime(row["Finish_date"]);
+                        string remainingTime = (finishDate > DateTime.Now)
+                            ? $"Còn lại {finishDate.Subtract(DateTime.Now).Days} ngày"
+                            : "Quá hạn";
+
+                        // Create task control
+                        tasks taskControl = new tasks();
+
+                        // Set task details using properties in tasks control
+                        taskControl.TaskTitle = content;  // Set the task content
+                        taskControl.TaskDay = finishDate.ToString("dd/MM/yyyy");  // Set the finish date
+                        taskControl.TaskHour = remainingTime;  // Set the remaining time or "Overdue"
+
+                        // Add task to corresponding section based on task status
+                        if (taskStatus == "Pending")
+                        {
+                            taskControl.BackColor = Color.LightCoral;  // Set color for "Việc cần làm"
+                        }
+                        else if (taskStatus == "In Progress")
+                        {
+                            taskControl.BackColor = Color.Yellow;  // Set color for "Đang thực hiện" 
+                        }
+                        else if (taskStatus == "Completed")
+                        {
+                            taskControl.BackColor = Color.LightGreen;  // Set color for "Đã hoàn thành"
+                        }
+                        flowTaskList.Controls.Add(taskControl);  // Add the task control to the flow layout panel
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Lỗi kết nối SQL Server: {ex.Message}", "Lỗi kết nối", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void OnTaskClicked(object sender, EventArgs e)
+        // Event handlers for button clicks to filter tasks by status
+        private void button_havetodo_Click(object sender, EventArgs e)
         {
-            var t = sender as tasks;
-            if (t == null) return;
-
-            // 3) Tạo detail và truyền data
-            var detail = new TaskDetail
-            {
-                ProjectName = t.TaskTitle,
-                Deadline = $"{t.TaskTime} – {t.TaskDate}"
-            };
-            detail.Dock = DockStyle.Fill;
-
-            // 4) Load lên Main
-            (this.FindForm() as Main)?.LoadUserControl(detail);
+            LoadTasksByStatus("Pending");
         }
 
+        private void button_IsDoing_Click(object sender, EventArgs e)
+        {
+            LoadTasksByStatus("In Progress");
+        }
 
+        private void button_Finished_Click(object sender, EventArgs e)
+        {
+            LoadTasksByStatus("Completed");
+        }
+
+        // Method to load tasks by their status
+        private void LoadTasksByStatus(string status)
+        {
+            // Clear the current task list
+            flowTaskList.Controls.Clear();
+
+            try
+            {
+                string connectionString = "Server=localhost\\SQLEXPRESS;Database=ProjectManagerDB;Trusted_Connection=True;Encrypt=False";
+                string query = "SELECT TaskId, Content, taskStatus, Finish_date FROM Tasks WHERE ProjectId = (SELECT ProjectId FROM Projects WHERE ProjectName = @currentProjectName) AND taskStatus = @status";
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    adapter.SelectCommand.Parameters.AddWithValue("@status", status);
+                    adapter.SelectCommand.Parameters.AddWithValue("@currentProjectName", currentProjectName);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        string taskStatus = row["taskStatus"].ToString();
+                        string content = row["Content"].ToString();
+                        DateTime finishDate = Convert.ToDateTime(row["Finish_date"]);
+                        string remainingTime = (finishDate > DateTime.Now) ? $"Còn lại {finishDate.Subtract(DateTime.Now).Days} ngày" : "Quá hạn";
+
+                        // Create task control
+                        tasks taskControl = new tasks();
+
+                        // Set task details using properties in tasks control
+                        taskControl.TaskTitle = content;  // Set task content
+                        taskControl.TaskDay = finishDate.ToString("dd/MM/yyyy");  // Set finish date
+                        taskControl.TaskHour = remainingTime;  // Set remaining time
+
+                        flowTaskList.Controls.Add(taskControl);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Lỗi kết nối SQL Server: {ex.Message}", "Lỗi kết nối", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
