@@ -40,6 +40,7 @@ namespace Project_Manager_App
                     {
                         // Cập nhật các label và richTextBox với thông tin thành viên
                         label_name.Text = dt.Rows[0]["Username"].ToString();
+                        label_Username.Text = dt.Rows[0]["Username"].ToString();  // Cập nhật label_Username
                         label_sex.Text = dt.Rows[0]["Sex"].ToString();
                         label_phone.Text = dt.Rows[0]["PhoneNumber"].ToString();
                         label_role.Text = dt.Rows[0]["Role"].ToString();
