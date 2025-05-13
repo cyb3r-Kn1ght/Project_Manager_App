@@ -24,14 +24,19 @@ namespace Project_Manager_App
             InitializeComponent();
         }
 
-        // Hàm để load dữ liệu và cập nhật giao diện
-        /* public void LoadData(ProjectData projectData)
+        public void HideProgressBar()
         {
-            // Gán dữ liệu từ ProjectData vào các thành phần giao diện
-            label_nameProject.Text = projectData.Title;
-            pic_Project.Image = Image.FromFile(projectData.ImagePath);
-            processBarofProject.Value = projectData.Progress;
-        } */
+            processBarofProject.Visible = false;
+        }
+
+        public void SetProject(string projectName, string imagePath)
+        {
+            label_nameProject.Text = projectName;
+            string fullPath = Path.Combine(Application.StartupPath, "Resources", imagePath);
+            pic_Project.SizeMode = PictureBoxSizeMode.Zoom;
+            pic_Project.Image = Image.FromFile(fullPath);
+            this.Dock = DockStyle.Fill;
+        }
 
         private void img_Project_Click(object sender, EventArgs e)
         {
@@ -64,6 +69,11 @@ namespace Project_Manager_App
         }
 
         private void label_nameProject_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void processBarofProject_Click_1(object sender, EventArgs e)
         {
 
         }

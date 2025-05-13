@@ -95,17 +95,20 @@
             pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(1, -1);
+            pictureBox1.Margin = new Padding(2, 2, 2, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(138, 49);
+            pictureBox1.Size = new Size(110, 39);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // panel2
             // 
-            panel2.Location = new Point(3, 571);
+            panel2.Location = new Point(2, 457);
+            panel2.Margin = new Padding(2, 2, 2, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1311, 175);
+            panel2.Size = new Size(1049, 140);
             panel2.TabIndex = 2;
             // 
             // label_Username
@@ -364,9 +367,10 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(75, 368);
+            label7.Location = new Point(60, 294);
+            label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(75, 25);
+            label7.Size = new Size(60, 20);
             label7.TabIndex = 7;
             label7.Text = "Địa chỉ:";
             // 
@@ -374,9 +378,10 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(75, 312);
+            label6.Location = new Point(60, 250);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(63, 25);
+            label6.Size = new Size(51, 20);
             label6.TabIndex = 6;
             label6.Text = "Email:";
             // 
@@ -384,7 +389,8 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(75, 253);
+            label5.Location = new Point(60, 202);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
             label5.Size = new Size(73, 25);
             label5.TabIndex = 5;
@@ -394,9 +400,10 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(75, 194);
+            label4.Location = new Point(60, 155);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(129, 25);
+            label4.Size = new Size(104, 20);
             label4.TabIndex = 4;
             label4.Text = "Số điện thoại:";
             // 
@@ -404,9 +411,10 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(75, 142);
+            label3.Location = new Point(60, 114);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(90, 25);
+            label3.Size = new Size(73, 20);
             label3.TabIndex = 3;
             label3.Text = "Giới tính:";
             // 
@@ -414,9 +422,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(75, 93);
+            label2.Location = new Point(60, 74);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(102, 25);
+            label2.Size = new Size(84, 20);
             label2.TabIndex = 2;
             label2.Text = "Username:";
             // 
@@ -424,9 +433,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(29, 28);
+            label1.Location = new Point(23, 22);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(167, 25);
+            label1.Size = new Size(135, 20);
             label1.TabIndex = 1;
             label1.Text = "Thông tin cá nhân";
             // 
@@ -483,11 +493,11 @@
             // 
             // member_details
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutPanel1);
             Name = "member_details";
-            Size = new Size(1310, 749);
+            Size = new Size(1048, 599);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
