@@ -12,11 +12,8 @@ namespace Project_Manager_App
         public Main()
         {
             InitializeComponent();
-
-            /*
-             TEST AREA
             var pm = new project_manager();
-
+            /*
             LoadUserControl(pm);
             */
            
@@ -24,7 +21,6 @@ namespace Project_Manager_App
             LoadUC(loginForm);
 
         }
-
         public void LoadUC(UserControl uc)
         {
             // Giả sử bạn có 1 Panel tên là panelMain để chứa các UserControl
@@ -32,10 +28,10 @@ namespace Project_Manager_App
             uc.Dock = DockStyle.Fill;           // Cho UC chiếm toàn bộ panel
             panelMain.Controls.Add(uc);         // Thêm UC mới vào
         }
-
         private void panelMain_Paint(object sender, PaintEventArgs e)
         {
-
+            // Nếu không cần vẽ gì, có thể để trống
         }
     }
+
 }
