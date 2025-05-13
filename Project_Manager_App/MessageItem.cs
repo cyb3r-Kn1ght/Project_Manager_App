@@ -10,21 +10,18 @@ using System.Windows.Forms;
 
 namespace Project_Manager_App
 {
-    public partial class processTracking : UserControl
+    public partial class MessageItem : UserControl
     {
-        public processTracking()
+        public MessageItem()
         {
             InitializeComponent();
         }
 
-        private void taskTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void SetMessageData(DateTime time, string sender, string message)
         {
-
-        }
-
-        private void pictureBox_backButton_Click(object sender, EventArgs e)
-        {
-
+            lblTime.Text = time.ToString("HH:mm:ss");
+            lblSender.Text = sender;
+            lblMessage.Text = message;
         }
     }
 }

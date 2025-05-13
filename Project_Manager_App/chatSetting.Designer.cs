@@ -20,7 +20,6 @@
             panel1 = new Panel();
             label1 = new Label();
             pictureBox_backButton = new PictureBox();
-            panel2 = new Panel();
             groupInfo = new GroupBox();
             txt_manager = new TextBox();
             txt_description = new TextBox();
@@ -28,27 +27,24 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            panel3 = new Panel();
             groupMemberList = new GroupBox();
-            btn_addMember = new Button();
             memberList = new ListView();
             columnHeaderName = new ColumnHeader();
             columnHeaderRole = new ColumnHeader();
             panel4 = new Panel();
+            btn_addMember = new Button();
+            panel5 = new Panel();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            button2 = new Button();
             groupBox3 = new GroupBox();
             rdbtn_onlyMentions = new RadioButton();
             rdbtn_muteAll = new RadioButton();
-            panel5 = new Panel();
-            button2 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_backButton).BeginInit();
-            panel2.SuspendLayout();
             groupInfo.SuspendLayout();
-            panel3.SuspendLayout();
             groupMemberList.SuspendLayout();
-            panel4.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             groupBox3.SuspendLayout();
-            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -56,9 +52,10 @@
             panel1.BackColor = Color.DeepSkyBlue;
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox_backButton);
-            panel1.Location = new Point(0, 0);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(844, 53);
+            panel1.Size = new Size(1291, 44);
             panel1.TabIndex = 0;
             // 
             // label1
@@ -75,18 +72,10 @@
             pictureBox_backButton.Image = Properties.Resources.arrow_back_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24;
             pictureBox_backButton.Location = new Point(3, 3);
             pictureBox_backButton.Name = "pictureBox_backButton";
-            pictureBox_backButton.Size = new Size(56, 47);
+            pictureBox_backButton.Size = new Size(56, 37);
             pictureBox_backButton.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox_backButton.TabIndex = 1;
             pictureBox_backButton.TabStop = false;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(groupInfo);
-            panel2.Location = new Point(3, 56);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(838, 125);
-            panel2.TabIndex = 1;
             // 
             // groupInfo
             // 
@@ -96,9 +85,10 @@
             groupInfo.Controls.Add(label4);
             groupInfo.Controls.Add(label3);
             groupInfo.Controls.Add(label2);
-            groupInfo.Location = new Point(3, 3);
+            groupInfo.Dock = DockStyle.Fill;
+            groupInfo.Location = new Point(3, 53);
             groupInfo.Name = "groupInfo";
-            groupInfo.Size = new Size(835, 119);
+            groupInfo.Size = new Size(1291, 124);
             groupInfo.TabIndex = 0;
             groupInfo.TabStop = false;
             groupInfo.Text = "Group Info";
@@ -155,45 +145,30 @@
             label2.TabIndex = 0;
             label2.Text = "Group name: ";
             // 
-            // panel3
-            // 
-            panel3.Controls.Add(groupMemberList);
-            panel3.Location = new Point(3, 187);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(838, 240);
-            panel3.TabIndex = 2;
-            // 
             // groupMemberList
             // 
-            groupMemberList.Controls.Add(btn_addMember);
             groupMemberList.Controls.Add(memberList);
-            groupMemberList.Location = new Point(3, 3);
+            groupMemberList.Controls.Add(panel4);
+            groupMemberList.Dock = DockStyle.Fill;
+            groupMemberList.Location = new Point(3, 183);
             groupMemberList.Name = "groupMemberList";
-            groupMemberList.Size = new Size(832, 256);
+            groupMemberList.Size = new Size(1291, 176);
             groupMemberList.TabIndex = 0;
             groupMemberList.TabStop = false;
             groupMemberList.Text = "Group member";
-            // 
-            // button1
-            // 
-            btn_addMember.Location = new Point(3, 208);
-            btn_addMember.Name = "btn_addMember";
-            btn_addMember.Size = new Size(176, 29);
-            btn_addMember.TabIndex = 1;
-            btn_addMember.Text = "Add member";
-            btn_addMember.UseVisualStyleBackColor = true;
             // 
             // memberList
             // 
             memberList.BorderStyle = BorderStyle.FixedSingle;
             memberList.Columns.AddRange(new ColumnHeader[] { columnHeaderName, columnHeaderRole });
+            memberList.Dock = DockStyle.Fill;
             memberList.FullRowSelect = true;
             memberList.GridLines = true;
             memberList.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-            memberList.Location = new Point(6, 26);
+            memberList.Location = new Point(3, 23);
             memberList.MultiSelect = false;
             memberList.Name = "memberList";
-            memberList.Size = new Size(820, 168);
+            memberList.Size = new Size(1285, 150);
             memberList.TabIndex = 0;
             memberList.UseCompatibleStateImageBehavior = false;
             memberList.View = View.Details;
@@ -201,29 +176,79 @@
             // columnHeaderName
             // 
             columnHeaderName.Text = "Name";
-            columnHeaderName.Width = 100;
+            columnHeaderName.Width = 200;
             // 
             // columnHeaderRole
             // 
             columnHeaderRole.Text = "Role";
-            columnHeaderRole.Width = 200;
+            columnHeaderRole.Width = 1400;
             // 
             // panel4
             // 
-            panel4.Controls.Add(groupBox3);
-            panel4.Location = new Point(3, 452);
+            panel4.Location = new Point(0, 262);
             panel4.Name = "panel4";
             panel4.Size = new Size(838, 93);
             panel4.TabIndex = 3;
+            // 
+            // btn_addMember
+            // 
+            btn_addMember.Dock = DockStyle.Left;
+            btn_addMember.Location = new Point(3, 365);
+            btn_addMember.Name = "btn_addMember";
+            btn_addMember.Size = new Size(176, 44);
+            btn_addMember.TabIndex = 1;
+            btn_addMember.Text = "Add member";
+            btn_addMember.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
+            panel5.Location = new Point(3, 433);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(838, 43);
+            panel5.TabIndex = 4;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(button2, 0, 5);
+            tableLayoutPanel1.Controls.Add(groupBox3, 0, 4);
+            tableLayoutPanel1.Controls.Add(btn_addMember, 0, 3);
+            tableLayoutPanel1.Controls.Add(groupInfo, 0, 1);
+            tableLayoutPanel1.Controls.Add(panel1, 0, 0);
+            tableLayoutPanel1.Controls.Add(groupMemberList, 0, 2);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 6;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 130F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 103F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 46F));
+            tableLayoutPanel1.Size = new Size(1297, 561);
+            tableLayoutPanel1.TabIndex = 5;
+            // 
+            // button2
+            // 
+            button2.Dock = DockStyle.Left;
+            button2.Location = new Point(3, 518);
+            button2.Name = "button2";
+            button2.Size = new Size(182, 40);
+            button2.TabIndex = 7;
+            button2.Text = "Leave";
+            button2.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
             groupBox3.Controls.Add(rdbtn_onlyMentions);
             groupBox3.Controls.Add(rdbtn_muteAll);
-            groupBox3.Location = new Point(6, 3);
+            groupBox3.Dock = DockStyle.Fill;
+            groupBox3.Location = new Point(3, 415);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(826, 90);
-            groupBox3.TabIndex = 0;
+            groupBox3.Size = new Size(1291, 97);
+            groupBox3.TabIndex = 6;
             groupBox3.TabStop = false;
             groupBox3.Text = "Notifications";
             // 
@@ -249,45 +274,22 @@
             rdbtn_muteAll.Text = "Mute all notifications";
             rdbtn_muteAll.UseVisualStyleBackColor = true;
             // 
-            // panel5
-            // 
-            panel5.Controls.Add(button2);
-            panel5.Location = new Point(0, 551);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(838, 43);
-            panel5.TabIndex = 4;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(6, 11);
-            button2.Name = "button2";
-            button2.Size = new Size(182, 29);
-            button2.TabIndex = 0;
-            button2.Text = "Leave";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // chatSetting
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(tableLayoutPanel1);
             Controls.Add(panel5);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
             Name = "chatSetting";
-            Size = new Size(844, 597);
+            Size = new Size(1297, 561);
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox_backButton).EndInit();
-            panel2.ResumeLayout(false);
             groupInfo.ResumeLayout(false);
             groupInfo.PerformLayout();
-            panel3.ResumeLayout(false);
             groupMemberList.ResumeLayout(false);
-            panel4.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
-            panel5.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -296,8 +298,6 @@
         private Panel panel1;
         private PictureBox pictureBox_backButton;
         private Label label1;
-        private Panel panel2;
-        private Panel panel3;
         private GroupBox groupInfo;
         private Panel panel4;
         private Panel panel5;
@@ -312,6 +312,7 @@
         private ListView memberList;
         private ColumnHeader columnHeaderName;
         private ColumnHeader columnHeaderRole;
+        private TableLayoutPanel tableLayoutPanel1;
         private GroupBox groupBox3;
         private RadioButton rdbtn_onlyMentions;
         private RadioButton rdbtn_muteAll;

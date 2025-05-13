@@ -20,12 +20,12 @@
             base.Dispose(disposing);
         }
 
-        public void LoadUserControl(UserControl control)
-        {
-            panelMain.Controls.Clear();         // Xóa nội dung cũ
-            control.Dock = DockStyle.Fill;      // Cho vừa panel
-            panelMain.Controls.Add(control);    // Thêm mới
-        }
+        //public void LoadUserControl(UserControl control)
+        //{
+        //    panelMain.Controls.Clear();         // Xóa nội dung cũ
+        //    control.Dock = DockStyle.Fill;      // Cho vừa panel
+        //    panelMain.Controls.Add(control);    // Thêm mới
+        //}
 
         #region Windows Form Designer generated code
 
