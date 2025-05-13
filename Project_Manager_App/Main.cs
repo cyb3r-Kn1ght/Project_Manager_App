@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Windows.Forms;
+using Microsoft.Extensions.Configuration;
+
 
 namespace Project_Manager_App
 {
+
+
     public partial class Main : Form
     {
         public Main()
@@ -15,8 +19,9 @@ namespace Project_Manager_App
 
             LoadUserControl(pm);
             */
+           
             var loginForm = new Login_Form();
-            LoadUserControl(loginForm);
+            LoadUC(loginForm);
 
         }
 

@@ -173,6 +173,16 @@ namespace Project_Manager_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap no_img {
+            get {
+                object obj = ResourceManager.GetObject("no_img", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap person_24dp_00BFFF_FILL0_wght400_GRAD0_opsz24 {
             get {
                 object obj = ResourceManager.GetObject("person_24dp_00BFFF_FILL0_wght400_GRAD0_opsz24", resourceCulture);

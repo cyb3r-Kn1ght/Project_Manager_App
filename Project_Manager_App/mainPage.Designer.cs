@@ -34,12 +34,18 @@
             label_title = new Label();
             panel1 = new Panel();
             tab_Project1 = new tab_Project();
-            panel2 = new Panel();
             panel3 = new Panel();
+            tab_Project3 = new tab_Project();
             panel4 = new Panel();
+            tab_Project4 = new tab_Project();
+            panel2 = new Panel();
+            tab_Project2 = new tab_Project();
             tableLayoutPanel1.SuspendLayout();
             panel_DisplayHeader.SuspendLayout();
             panel1.SuspendLayout();
+            panel3.SuspendLayout();
+            panel4.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -50,9 +56,9 @@
             tableLayoutPanel1.Controls.Add(panel_DisplayHeader, 0, 0);
             tableLayoutPanel1.Controls.Add(label_title, 0, 1);
             tableLayoutPanel1.Controls.Add(panel1, 0, 2);
-            tableLayoutPanel1.Controls.Add(panel2, 1, 2);
             tableLayoutPanel1.Controls.Add(panel3, 0, 3);
             tableLayoutPanel1.Controls.Add(panel4, 1, 3);
+            tableLayoutPanel1.Controls.Add(panel2, 1, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -116,29 +122,65 @@
             tab_Project1.Size = new Size(519, 278);
             tab_Project1.TabIndex = 0;
             // 
-            // panel2
-            // 
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(528, 142);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(520, 278);
-            panel2.TabIndex = 3;
-            // 
             // panel3
             // 
+            panel3.Controls.Add(tab_Project3);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(3, 426);
             panel3.Name = "panel3";
             panel3.Size = new Size(519, 279);
             panel3.TabIndex = 4;
             // 
+            // tab_Project3
+            // 
+            tab_Project3.Dock = DockStyle.Fill;
+            tab_Project3.Location = new Point(0, 0);
+            tab_Project3.Name = "tab_Project3";
+            tab_Project3.Progress = 0;
+            tab_Project3.ProjectImage = null;
+            tab_Project3.ProjectTitle = null;
+            tab_Project3.Size = new Size(519, 279);
+            tab_Project3.TabIndex = 0;
+            // 
             // panel4
             // 
+            panel4.Controls.Add(tab_Project4);
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(528, 426);
             panel4.Name = "panel4";
             panel4.Size = new Size(520, 279);
             panel4.TabIndex = 5;
+            // 
+            // tab_Project4
+            // 
+            tab_Project4.Dock = DockStyle.Fill;
+            tab_Project4.Location = new Point(0, 0);
+            tab_Project4.Name = "tab_Project4";
+            tab_Project4.Progress = 0;
+            tab_Project4.ProjectImage = null;
+            tab_Project4.ProjectTitle = null;
+            tab_Project4.Size = new Size(520, 279);
+            tab_Project4.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(tab_Project2);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(528, 142);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(520, 278);
+            panel2.TabIndex = 6;
+            // 
+            // tab_Project2
+            // 
+            tab_Project2.Dock = DockStyle.Fill;
+            tab_Project2.Location = new Point(0, 0);
+            tab_Project2.Name = "tab_Project2";
+            tab_Project2.Progress = 0;
+            tab_Project2.ProjectImage = null;
+            tab_Project2.ProjectTitle = null;
+            tab_Project2.Size = new Size(520, 278);
+            tab_Project2.TabIndex = 0;
             // 
             // mainPage
             // 
@@ -151,6 +193,9 @@
             tableLayoutPanel1.PerformLayout();
             panel_DisplayHeader.ResumeLayout(false);
             panel1.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -161,9 +206,12 @@
         private headerUserControl headerUserControl1;
         private Label label_title;
         public Panel panel1;
-        private Panel panel2;
         private Panel panel3;
         private Panel panel4;
+        private tab_Project tab_Project3;
+        private tab_Project tab_Project4;
+        private Panel panel2;
+        private tab_Project tab_Project2;
         private tab_Project tab_Project1;
     }
 }

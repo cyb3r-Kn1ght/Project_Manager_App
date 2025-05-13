@@ -16,42 +16,30 @@ namespace Project_Manager_App
     public partial class Login_Form : UserControl
     {
 
-        private void Connect2Server()
-        {
-            try
-            {
-                string connectionString = "Server=26.198.131.10,1433;Database=Proj_Management;User Id=Luan1;Password=luan123;TrustServerCertificate=True";
-                string query = "SELECT ProjectId, ProjectName FROM Project";
-
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show($"Lỗi kết nối SQL Server: {ex.Message}", "Lỗi kết nối", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
+        
 
         public Login_Form()
         {
             InitializeComponent();
-            Connect2Server();
         }
 
 
         private bool Check_Login(string username, string password)
         {
-            if (username == "No1hiz9" /*cho nay nap data vao la xong*/ && password == "memaybeo"/*cho nay nap data vao la xong*/)
+            var connString = AppConfig.GetConnectionString("DefaultConnection");
+            using (var conn = new SqlConnection(connString))
             {
-                return true;
+               conn.Open();
+        var sql = "SELECT COUNT(*) FROM Users WHERE Username = @username AND Password = @password";
+        using (var cmd = new SqlCommand(sql, conn))
+        {
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@password", password); // Nếu mật khẩu đã mã hóa, cần mã hóa trước khi so sánh
+
+            int count = (int)cmd.ExecuteScalar();
+            return count > 0;
+        }
             }
-            return false;
         }
         private void label1_Click(object sender, EventArgs e)
         {
@@ -91,14 +79,33 @@ namespace Project_Manager_App
         {
 
         }
+        private int GetUserId(string username)
+        {
+            var connString = AppConfig.GetConnectionString("DefaultConnection");
+            using (var conn = new SqlConnection(connString))
+            {
+                conn.Open();
+                var sql = "SELECT UserId FROM Users WHERE Username = @username";
+                using (var cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+                    var result = cmd.ExecuteScalar();
+                    return result != null ? Convert.ToInt32(result) : -1;
+                }
+            }
+        }
 
         private void btn_Login_Click_1(object sender, EventArgs e)
         {
             // kiem tra dang nhap thanh cong 
             if (Check_Login(txt_Username.Text, txt_password.Text))
             {
-                var mainPage = new mainPage();
+                int userId = GetUserId(txt_Username.Text);
+                var mainPage = new mainPage(userId);
                 var mainForm = this.ParentForm as Main;
+
+                // Sử dụng phương thức public để thiết lập MainForm
+                mainPage.SetMainFormForHeader(mainForm);
                 mainForm?.LoadUC(mainPage);
             }
 
