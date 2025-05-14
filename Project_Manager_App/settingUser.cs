@@ -20,7 +20,7 @@ namespace Project_Manager_App
         public int UserId { get; set; }
         public void SetUserInfo(string userName, string role)
         {
-            ltb_Username.Text = userName;
+            lb_username.Text = userName;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -39,6 +39,11 @@ namespace Project_Manager_App
         }
         public Main MainForm { get; set; }
         private void btn_back_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_back_Click_1(object sender, EventArgs e)
         {
             if (MainForm == null)
             {
@@ -60,6 +65,19 @@ namespace Project_Manager_App
 
             // Chuyển đổi UserControl hiển thị
             MainForm.LoadUC(mainPage);
+        }
+
+        private void title_btn_back_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_change_password_Click(object sender, EventArgs e)
+        {
+            var changePassword_uc = new changePassword();
+            changePassword_uc.UserId = this.UserId; // Gán UserId hiện tại
+            MainForm.LoadUC(changePassword_uc);
+
         }
     }
 }

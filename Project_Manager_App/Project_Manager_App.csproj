@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Bunifu.UI.WinForms" Version="9.0.0" />
     <PackageReference Include="CircularProgressBar" Version="2.8.0.16" />
     <PackageReference Include="CircularProgressBar_NET5" Version="3.0.0" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.2" />

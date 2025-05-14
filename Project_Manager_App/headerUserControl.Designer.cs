@@ -33,7 +33,7 @@
             Username = new Label();
             roleOfUser = new Label();
             btn_setting = new Button();
-            btn_group = new Button();
+            btn_chat = new Button();
             btn_add = new Button();
             btn_search = new Button();
             ((System.ComponentModel.ISupportInitialize)avtUser).BeginInit();
@@ -82,7 +82,7 @@
             btn_setting.FlatAppearance.BorderSize = 0;
             btn_setting.FlatStyle = FlatStyle.Flat;
             btn_setting.Image = (Image)resources.GetObject("btn_setting.Image");
-            btn_setting.Location = new Point(903, 10);
+            btn_setting.Location = new Point(706, 10);
             btn_setting.Name = "btn_setting";
             btn_setting.Size = new Size(73, 60);
             btn_setting.TabIndex = 7;
@@ -91,21 +91,21 @@
             btn_setting.UseVisualStyleBackColor = false;
             btn_setting.Click += btn_setting_Click;
             // 
-            // btn_group
+            // btn_chat
             // 
-            btn_group.Anchor = AnchorStyles.Right;
-            btn_group.BackColor = Color.Transparent;
-            btn_group.Cursor = Cursors.Hand;
-            btn_group.FlatAppearance.BorderSize = 0;
-            btn_group.FlatStyle = FlatStyle.Flat;
-            btn_group.Image = (Image)resources.GetObject("btn_group.Image");
-            btn_group.Location = new Point(813, 10);
-            btn_group.Name = "btn_group";
-            btn_group.Size = new Size(70, 60);
-            btn_group.TabIndex = 8;
-            btn_group.TabStop = false;
-            btn_group.Text = "\r\n";
-            btn_group.UseVisualStyleBackColor = false;
+            btn_chat.Anchor = AnchorStyles.Right;
+            btn_chat.BackColor = Color.Transparent;
+            btn_chat.Cursor = Cursors.Hand;
+            btn_chat.FlatAppearance.BorderSize = 0;
+            btn_chat.FlatStyle = FlatStyle.Flat;
+            btn_chat.Image = (Image)resources.GetObject("btn_chat.Image");
+            btn_chat.Location = new Point(616, 10);
+            btn_chat.Name = "btn_chat";
+            btn_chat.Size = new Size(70, 60);
+            btn_chat.TabIndex = 8;
+            btn_chat.TabStop = false;
+            btn_chat.Text = "\r\n";
+            btn_chat.UseVisualStyleBackColor = false;
             // 
             // btn_add
             // 
@@ -115,7 +115,7 @@
             btn_add.FlatAppearance.BorderSize = 0;
             btn_add.FlatStyle = FlatStyle.Flat;
             btn_add.Image = (Image)resources.GetObject("btn_add.Image");
-            btn_add.Location = new Point(718, 10);
+            btn_add.Location = new Point(521, 10);
             btn_add.Name = "btn_add";
             btn_add.Size = new Size(73, 60);
             btn_add.TabIndex = 9;
@@ -131,7 +131,7 @@
             btn_search.FlatAppearance.BorderSize = 0;
             btn_search.FlatStyle = FlatStyle.Flat;
             btn_search.Image = (Image)resources.GetObject("btn_search.Image");
-            btn_search.Location = new Point(629, 10);
+            btn_search.Location = new Point(432, 10);
             btn_search.Name = "btn_search";
             btn_search.Size = new Size(73, 60);
             btn_search.TabIndex = 10;
@@ -146,13 +146,13 @@
             BackColor = Color.DeepSkyBlue;
             Controls.Add(btn_search);
             Controls.Add(btn_add);
-            Controls.Add(btn_group);
+            Controls.Add(btn_chat);
             Controls.Add(btn_setting);
             Controls.Add(roleOfUser);
             Controls.Add(Username);
             Controls.Add(avtUser);
             Name = "headerUserControl";
-            Size = new Size(996, 80);
+            Size = new Size(799, 80);
             ((System.ComponentModel.ISupportInitialize)avtUser).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -164,7 +164,7 @@
         private Label Username;
         private Label roleOfUser;
         private Button btn_setting;
-        private Button btn_group;
+        private Button btn_chat;
         private Button btn_add;
         private Button btn_search;
     }

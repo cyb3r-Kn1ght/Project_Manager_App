@@ -40,33 +40,27 @@ namespace Project_Manager_App
 
         }
 
-        
-
         public Main MainForm { get; set; } // Property tham chiếu đến form Main
 
         private void btn_setting_Click(object sender, EventArgs e)
         {
+            if (MainForm == null)
+            {
+                MessageBox.Show("MainForm chưa được thiết lập đúng cách!");
+                return;
+            }
+
             string userName = Username.Text;
-            //string role = roleOfUser.Text;
-
-            //// Tạo settingUser UserControl mới
-            //var settingUC = new settingUser();
-            //settingUC.SetUserInfo(userName, role);
-            //settingUC.UserId = userId; // Lấy userId từ đâu đó, có thể cần thêm property trong headerUserControl
-            //settingUC.MainForm = MainForm;
-            //// Gọi LoadUC của Main để thay thế toàn bộ panel
-            //MainForm?.LoadUC(settingUC);
-
             string role = roleOfUser.Text;
 
             // Tạo settingUser UserControl mới
             var settingUC = new settingUser();
             settingUC.SetUserInfo(userName, role);
             settingUC.UserId = userId; // Truyền userId
-            settingUC.MainForm = MainForm; // Thêm dòng này để truyền MainForm
+            settingUC.MainForm = MainForm; // Truyền MainForm
 
             // Gọi LoadUC của Main để thay thế toàn bộ panel
-            MainForm?.LoadUC(settingUC);
+            MainForm.LoadUC(settingUC);
         }
     }
 }
