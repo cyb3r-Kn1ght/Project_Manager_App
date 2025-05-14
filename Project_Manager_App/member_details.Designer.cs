@@ -85,9 +85,10 @@
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(label_Username);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(3, 3);
+            panel1.Location = new Point(4, 4);
+            panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1304, 44);
+            panel1.Size = new Size(1302, 54);
             panel1.TabIndex = 1;
             // 
             // pictureBox1
@@ -95,27 +96,27 @@
             pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(1, -1);
-            pictureBox1.Margin = new Padding(2, 2, 2, 2);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(110, 39);
+            pictureBox1.Size = new Size(138, 49);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
-           // pictureBox1.Click += pictureBox1_Click;
             // 
             // panel2
             // 
-            panel2.Location = new Point(2, 457);
-            panel2.Margin = new Padding(2, 2, 2, 2);
+            panel2.Location = new Point(2, 571);
+            panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1049, 140);
+            panel2.Size = new Size(1311, 175);
             panel2.TabIndex = 2;
             // 
             // label_Username
             // 
             label_Username.AutoSize = true;
             label_Username.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_Username.Location = new Point(180, 1);
+            label_Username.Location = new Point(225, 1);
+            label_Username.Margin = new Padding(4, 0, 4, 0);
             label_Username.Name = "label_Username";
             label_Username.Size = new Size(123, 38);
             label_Username.TabIndex = 0;
@@ -127,9 +128,10 @@
             panel3.Controls.Add(richTextBox_AllProject);
             panel3.Controls.Add(label_AllProject);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(3, 53);
+            panel3.Location = new Point(4, 66);
+            panel3.Margin = new Padding(4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1304, 68);
+            panel3.Size = new Size(1302, 65);
             panel3.TabIndex = 2;
             // 
             // richTextBox_AllProject
@@ -137,9 +139,10 @@
             richTextBox_AllProject.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             richTextBox_AllProject.BackColor = Color.DeepSkyBlue;
             richTextBox_AllProject.BorderStyle = BorderStyle.None;
-            richTextBox_AllProject.Location = new Point(0, 28);
+            richTextBox_AllProject.Location = new Point(0, 35);
+            richTextBox_AllProject.Margin = new Padding(4);
             richTextBox_AllProject.Name = "richTextBox_AllProject";
-            richTextBox_AllProject.Size = new Size(1304, 40);
+            richTextBox_AllProject.Size = new Size(1302, 30);
             richTextBox_AllProject.TabIndex = 1;
             richTextBox_AllProject.Text = "Tên dự án";
             // 
@@ -148,6 +151,7 @@
             label_AllProject.AutoSize = true;
             label_AllProject.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_AllProject.Location = new Point(0, 0);
+            label_AllProject.Margin = new Padding(4, 0, 4, 0);
             label_AllProject.Name = "label_AllProject";
             label_AllProject.Size = new Size(143, 25);
             label_AllProject.TabIndex = 0;
@@ -159,9 +163,10 @@
             panel4.Controls.Add(richTextBox_Done);
             panel4.Controls.Add(label_Done);
             panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(3, 3);
+            panel4.Location = new Point(4, 4);
+            panel4.Margin = new Padding(4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(379, 147);
+            panel4.Size = new Size(374, 141);
             panel4.TabIndex = 3;
             // 
             // richTextBox_Done
@@ -169,9 +174,10 @@
             richTextBox_Done.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             richTextBox_Done.BackColor = Color.DeepSkyBlue;
             richTextBox_Done.BorderStyle = BorderStyle.None;
-            richTextBox_Done.Location = new Point(0, 30);
+            richTextBox_Done.Location = new Point(0, 38);
+            richTextBox_Done.Margin = new Padding(4);
             richTextBox_Done.Name = "richTextBox_Done";
-            richTextBox_Done.Size = new Size(379, 117);
+            richTextBox_Done.Size = new Size(374, 103);
             richTextBox_Done.TabIndex = 7;
             richTextBox_Done.Text = "Việc đã hoàn thành";
             // 
@@ -180,6 +186,7 @@
             label_Done.AutoSize = true;
             label_Done.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_Done.Location = new Point(0, 0);
+            label_Done.Margin = new Padding(4, 0, 4, 0);
             label_Done.Name = "label_Done";
             label_Done.Size = new Size(138, 25);
             label_Done.TabIndex = 0;
@@ -191,9 +198,10 @@
             panel5.Controls.Add(richTextBox_Doing);
             panel5.Controls.Add(label_Doing);
             panel5.Dock = DockStyle.Fill;
-            panel5.Location = new Point(3, 156);
+            panel5.Location = new Point(4, 153);
+            panel5.Margin = new Padding(4);
             panel5.Name = "panel5";
-            panel5.Size = new Size(379, 147);
+            panel5.Size = new Size(374, 141);
             panel5.TabIndex = 4;
             // 
             // richTextBox_Doing
@@ -201,9 +209,10 @@
             richTextBox_Doing.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             richTextBox_Doing.BackColor = Color.DeepSkyBlue;
             richTextBox_Doing.BorderStyle = BorderStyle.None;
-            richTextBox_Doing.Location = new Point(0, 31);
+            richTextBox_Doing.Location = new Point(0, 39);
+            richTextBox_Doing.Margin = new Padding(4);
             richTextBox_Doing.Name = "richTextBox_Doing";
-            richTextBox_Doing.Size = new Size(379, 116);
+            richTextBox_Doing.Size = new Size(374, 102);
             richTextBox_Doing.TabIndex = 8;
             richTextBox_Doing.Text = "Việc đang thực hiện";
             // 
@@ -212,6 +221,7 @@
             label_Doing.AutoSize = true;
             label_Doing.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_Doing.Location = new Point(0, 0);
+            label_Doing.Margin = new Padding(4, 0, 4, 0);
             label_Doing.Name = "label_Doing";
             label_Doing.Size = new Size(143, 25);
             label_Doing.TabIndex = 6;
@@ -223,9 +233,10 @@
             panel9.Controls.Add(richTextBox_ToDo);
             panel9.Controls.Add(label_ToDo);
             panel9.Dock = DockStyle.Fill;
-            panel9.Location = new Point(3, 309);
+            panel9.Location = new Point(4, 302);
+            panel9.Margin = new Padding(4);
             panel9.Name = "panel9";
-            panel9.Size = new Size(379, 147);
+            panel9.Size = new Size(374, 141);
             panel9.TabIndex = 5;
             // 
             // richTextBox_ToDo
@@ -233,9 +244,10 @@
             richTextBox_ToDo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             richTextBox_ToDo.BackColor = Color.DeepSkyBlue;
             richTextBox_ToDo.BorderStyle = BorderStyle.None;
-            richTextBox_ToDo.Location = new Point(2, 28);
+            richTextBox_ToDo.Location = new Point(2, 35);
+            richTextBox_ToDo.Margin = new Padding(4);
             richTextBox_ToDo.Name = "richTextBox_ToDo";
-            richTextBox_ToDo.Size = new Size(374, 116);
+            richTextBox_ToDo.Size = new Size(368, 102);
             richTextBox_ToDo.TabIndex = 8;
             richTextBox_ToDo.Text = "Các việc cần làm";
             // 
@@ -244,6 +256,7 @@
             label_ToDo.AutoSize = true;
             label_ToDo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_ToDo.Location = new Point(0, 0);
+            label_ToDo.Margin = new Padding(4, 0, 4, 0);
             label_ToDo.Name = "label_ToDo";
             label_ToDo.Size = new Size(119, 25);
             label_ToDo.TabIndex = 0;
@@ -255,9 +268,10 @@
             panel10.Controls.Add(richTextBox_AllDeadline);
             panel10.Controls.Add(label_AllDeadline);
             panel10.Dock = DockStyle.Fill;
-            panel10.Location = new Point(3, 462);
+            panel10.Location = new Point(4, 451);
+            panel10.Margin = new Padding(4);
             panel10.Name = "panel10";
-            panel10.Size = new Size(379, 148);
+            panel10.Size = new Size(374, 143);
             panel10.TabIndex = 6;
             // 
             // richTextBox_AllDeadline
@@ -265,9 +279,10 @@
             richTextBox_AllDeadline.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             richTextBox_AllDeadline.BackColor = Color.DeepSkyBlue;
             richTextBox_AllDeadline.BorderStyle = BorderStyle.None;
-            richTextBox_AllDeadline.Location = new Point(0, 31);
+            richTextBox_AllDeadline.Location = new Point(0, 39);
+            richTextBox_AllDeadline.Margin = new Padding(4);
             richTextBox_AllDeadline.Name = "richTextBox_AllDeadline";
-            richTextBox_AllDeadline.Size = new Size(379, 117);
+            richTextBox_AllDeadline.Size = new Size(374, 104);
             richTextBox_AllDeadline.TabIndex = 9;
             richTextBox_AllDeadline.Text = "Hoạt động mới nhất của user";
             // 
@@ -276,6 +291,7 @@
             label_AllDeadline.AutoSize = true;
             label_AllDeadline.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_AllDeadline.Location = new Point(0, 0);
+            label_AllDeadline.Margin = new Padding(4, 0, 4, 0);
             label_AllDeadline.Name = "label_AllDeadline";
             label_AllDeadline.Size = new Size(140, 25);
             label_AllDeadline.TabIndex = 0;
@@ -298,16 +314,19 @@
             panel11.Controls.Add(label2);
             panel11.Controls.Add(label1);
             panel11.Dock = DockStyle.Fill;
-            panel11.Location = new Point(394, 3);
+            panel11.Location = new Point(394, 4);
+            panel11.Margin = new Padding(4);
             panel11.Name = "panel11";
-            panel11.Size = new Size(907, 613);
+            panel11.Size = new Size(904, 598);
             panel11.TabIndex = 11;
             // 
             // label_address
             // 
+            label_address.Anchor = AnchorStyles.None;
             label_address.AutoSize = true;
             label_address.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label_address.Location = new Point(222, 365);
+            label_address.Location = new Point(278, 368);
+            label_address.Margin = new Padding(4, 0, 4, 0);
             label_address.Name = "label_address";
             label_address.Size = new Size(215, 25);
             label_address.TabIndex = 13;
@@ -315,9 +334,11 @@
             // 
             // label_email
             // 
+            label_email.Anchor = AnchorStyles.None;
             label_email.AutoSize = true;
             label_email.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label_email.Location = new Point(222, 312);
+            label_email.Location = new Point(278, 312);
+            label_email.Margin = new Padding(4, 0, 4, 0);
             label_email.Name = "label_email";
             label_email.Size = new Size(217, 25);
             label_email.TabIndex = 12;
@@ -325,9 +346,11 @@
             // 
             // label_role
             // 
+            label_role.Anchor = AnchorStyles.None;
             label_role.AutoSize = true;
             label_role.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label_role.Location = new Point(222, 253);
+            label_role.Location = new Point(278, 252);
+            label_role.Margin = new Padding(4, 0, 4, 0);
             label_role.Name = "label_role";
             label_role.Size = new Size(304, 25);
             label_role.TabIndex = 11;
@@ -335,9 +358,11 @@
             // 
             // label_phone
             // 
+            label_phone.Anchor = AnchorStyles.None;
             label_phone.AutoSize = true;
             label_phone.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label_phone.Location = new Point(222, 194);
+            label_phone.Location = new Point(278, 194);
+            label_phone.Margin = new Padding(4, 0, 4, 0);
             label_phone.Name = "label_phone";
             label_phone.Size = new Size(122, 25);
             label_phone.TabIndex = 10;
@@ -345,9 +370,11 @@
             // 
             // label_sex
             // 
+            label_sex.Anchor = AnchorStyles.None;
             label_sex.AutoSize = true;
             label_sex.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label_sex.Location = new Point(222, 142);
+            label_sex.Location = new Point(278, 142);
+            label_sex.Margin = new Padding(4, 0, 4, 0);
             label_sex.Name = "label_sex";
             label_sex.Size = new Size(36, 25);
             label_sex.TabIndex = 9;
@@ -355,9 +382,11 @@
             // 
             // label_name
             // 
+            label_name.Anchor = AnchorStyles.None;
             label_name.AutoSize = true;
             label_name.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label_name.Location = new Point(222, 93);
+            label_name.Location = new Point(278, 92);
+            label_name.Margin = new Padding(4, 0, 4, 0);
             label_name.Name = "label_name";
             label_name.Size = new Size(74, 25);
             label_name.TabIndex = 8;
@@ -365,31 +394,34 @@
             // 
             // label7
             // 
+            label7.Anchor = AnchorStyles.None;
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(60, 294);
+            label7.Location = new Point(75, 368);
             label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(60, 20);
+            label7.Size = new Size(75, 25);
             label7.TabIndex = 7;
             label7.Text = "Địa chỉ:";
             // 
             // label6
             // 
+            label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(60, 250);
+            label6.Location = new Point(75, 312);
             label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(51, 20);
+            label6.Size = new Size(63, 25);
             label6.TabIndex = 6;
             label6.Text = "Email:";
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(60, 202);
+            label5.Location = new Point(75, 252);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
             label5.Size = new Size(73, 25);
@@ -398,34 +430,37 @@
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(60, 155);
+            label4.Location = new Point(75, 194);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(104, 20);
+            label4.Size = new Size(129, 25);
             label4.TabIndex = 4;
             label4.Text = "Số điện thoại:";
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(60, 114);
+            label3.Location = new Point(75, 142);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(73, 20);
+            label3.Size = new Size(90, 25);
             label3.TabIndex = 3;
             label3.Text = "Giới tính:";
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(60, 74);
+            label2.Location = new Point(75, 92);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(84, 20);
+            label2.Size = new Size(102, 25);
             label2.TabIndex = 2;
             label2.Text = "Username:";
             // 
@@ -433,10 +468,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(23, 22);
+            label1.Location = new Point(29, 28);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(135, 20);
+            label1.Size = new Size(167, 25);
             label1.TabIndex = 1;
             label1.Text = "Thông tin cá nhân";
             // 
@@ -449,9 +484,10 @@
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Margin = new Padding(4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 62F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.7142849F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 89.28571F));
             tableLayoutPanel1.Size = new Size(1310, 749);
@@ -465,11 +501,12 @@
             tableLayoutPanel2.Controls.Add(panel11, 1, 0);
             tableLayoutPanel2.Controls.Add(tableLayoutPanel3, 0, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(3, 127);
+            tableLayoutPanel2.Location = new Point(4, 139);
+            tableLayoutPanel2.Margin = new Padding(4);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1304, 619);
+            tableLayoutPanel2.Size = new Size(1302, 606);
             tableLayoutPanel2.TabIndex = 3;
             // 
             // tableLayoutPanel3
@@ -481,23 +518,25 @@
             tableLayoutPanel3.Controls.Add(panel5, 0, 1);
             tableLayoutPanel3.Controls.Add(panel4, 0, 0);
             tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(3, 3);
+            tableLayoutPanel3.Location = new Point(4, 4);
+            tableLayoutPanel3.Margin = new Padding(4);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 4;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.Size = new Size(385, 613);
+            tableLayoutPanel3.Size = new Size(382, 598);
             tableLayoutPanel3.TabIndex = 12;
             // 
             // member_details
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutPanel1);
+            Margin = new Padding(4);
             Name = "member_details";
-            Size = new Size(1048, 599);
+            Size = new Size(1310, 749);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

@@ -14,6 +14,7 @@ namespace Project_Manager_App
 {
     public partial class tab_Project : UserControl
     {
+        public int UserID { get; set; }
 
         public string ProjectTitle { get; set; }
         public Image ProjectImage { get; set; }
@@ -70,7 +71,16 @@ namespace Project_Manager_App
 
         private void label_nameProject_Click(object sender, EventArgs e)
         {
+            string currentProjectName = label_nameProject.Text;  // Lấy tên dự án từ label_nameProject
 
+            // Tạo mới project_manager và truyền tên dự án vào
+            project_manager projectManagerControl = new project_manager();
+            projectManagerControl.currentProjectName = currentProjectName;  // Truyền tên dự án vào project_manager
+            projectManagerControl.userID = UserID;  // Truyền UserID vào project_manager
+
+            // Tìm form chính để load project_manager
+            Main mainForm = (Main)Application.OpenForms["Main"];
+            mainForm.LoadUserControl(projectManagerControl);
         }
 
         private void processBarofProject_Click_1(object sender, EventArgs e)
