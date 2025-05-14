@@ -27,6 +27,7 @@ namespace Project_Manager_App
         private bool Check_Login(string username, string password)
         {
             var connString = AppConfig.GetConnectionString("DefaultConnection");
+            //string connString = "Server=localhost\\SQLEXPRESS;Database=newProjectManagerApp;Trusted_Connection=True;";
             using (var conn = new SqlConnection(connString))
             {
                conn.Open();

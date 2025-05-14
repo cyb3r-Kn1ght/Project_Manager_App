@@ -47,7 +47,7 @@ namespace Project_Manager_App
 
             // Tìm form chính để load TaskDetail
             Main mainForm = (Main)Application.OpenForms["Main"];
-            mainForm.LoadUserControl(taskDetailControl);  // Gọi phương thức LoadUserControl trong Main
+            mainForm.LoadUC(taskDetailControl);  // Gọi phương thức LoadUserControl trong Main
         }
     }
 }

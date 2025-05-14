@@ -1,80 +1,22 @@
 ﻿using System;
 using System.Windows.Forms;
-using Microsoft.Extensions.Configuration;
 
 namespace Project_Manager_App
 {
-
-
     public partial class Main : Form
     {
-        private projectGroupChat pgc;
-        private chatSetting chatSettingUC;
-
         public Main()
         {
             InitializeComponent();
-            /*
-           TEST AREA
-
-            pgc = new projectGroupChat();
-            pgc.OnOpenChatSetting += OpenChatSetting;
-
-            LoadUserControl(pgc);
-        }
-
-        public void LoadUserControl(UserControl uc)
-        {
-            this.Controls.Clear();
-            uc.Dock = DockStyle.Fill;
-            this.Controls.Add(uc);
-        }
-
-            LoadUserControl(pm);
-            */
-           
             var loginForm = new Login_Form();
             LoadUC(loginForm);
-
         }
 
         public void LoadUC(UserControl uc)
         {
-            // Giả sử bạn có 1 Panel tên là panelMain để chứa các UserControl
-            panelMain.Controls.Clear();         // Xóa UC hiện tại (nếu có)
-            uc.Dock = DockStyle.Fill;           // Cho UC chiếm toàn bộ panel
-            panelMain.Controls.Add(uc);         // Thêm UC mới vào
-        private void OpenChatSetting(int projectId)
-        {
-            if (chatSettingUC == null)
-            {
-                chatSettingUC = new chatSetting();
-                chatSettingUC.OnBackToChat += () => {
-                    this.Controls.Clear();
-                    this.Controls.Add(pgc);
-                };
-            }
-            chatSettingUC.LoadGroupInfo(projectId);
-            LoadUserControl(chatSettingUC);
+            panelMain.Controls.Clear();
+            uc.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(uc);
         }
-
-
-
-
-        public void LoadUC(UserControl uc)
-        {
-            // Giả sử bạn có 1 Panel tên là panelMain để chứa các UserControl
-            panelMain.Controls.Clear();         // Xóa UC hiện tại (nếu có)
-            uc.Dock = DockStyle.Fill;           // Cho UC chiếm toàn bộ panel
-            panelMain.Controls.Add(uc);         // Thêm UC mới vào
-        }
-
-
-        private void panelMain_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-    
-    
     }
 }

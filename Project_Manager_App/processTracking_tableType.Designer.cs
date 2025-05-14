@@ -141,6 +141,7 @@
             pictureBox_filterButton.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox_filterButton.TabIndex = 9;
             pictureBox_filterButton.TabStop = false;
+            pictureBox_filterButton.Click += pictureBox_filterButton_Click_1;
             // 
             // dateTimePicker1
             // 

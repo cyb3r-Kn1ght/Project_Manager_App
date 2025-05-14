@@ -43,14 +43,14 @@
             panelMain.Dock = DockStyle.Fill;
             panelMain.Location = new Point(0, 0);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(950, 647);
+            panelMain.Size = new Size(1220, 647);
             panelMain.TabIndex = 0;
             // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(950, 647);
+            ClientSize = new Size(1220, 647);
             Controls.Add(panelMain);
             Name = "Main";
             StartPosition = FormStartPosition.CenterScreen;

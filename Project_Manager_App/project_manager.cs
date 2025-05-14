@@ -21,7 +21,7 @@ namespace Project_Manager_App
             // Tạo và hiển thị memberlist
             memberlist memberListControl = new memberlist(currentProjectName);
             Main mainForm = (Main)Application.OpenForms["Main"];
-            mainForm.LoadUserControl(memberListControl);
+            mainForm.LoadUC(memberListControl);
         }
         private void LoadProjectName()
         {

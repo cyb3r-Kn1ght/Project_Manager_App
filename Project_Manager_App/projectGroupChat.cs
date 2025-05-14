@@ -16,8 +16,9 @@ namespace Project_Manager_App
 {
     public partial class projectGroupChat : UserControl
     {
-        private string senderName = "User"; // Temporary sender name
+        private string senderName; // Will be loaded from database
         public int selectedProjectId = -1;
+        private readonly int UserId;
         public event Action<int> OnOpenChatSetting;
 
         private TcpClient client;
@@ -26,9 +27,11 @@ namespace Project_Manager_App
         private bool isConnected = false;
         private int currentChatId = -1;
 
-        public projectGroupChat()
+        public projectGroupChat(int userId)
         {
+            UserId = userId;
             InitializeComponent();
+            LoadUsername(); // Load username first
             listView1.View = View.List;
             LoadProjects();
             pictureBox_sendButton.Click += PictureBox_sendButton_Click;
@@ -41,8 +44,44 @@ namespace Project_Manager_App
             ConnectToServer();
         }
 
+        private void LoadUsername()
+        {
+            string connectionString = "Server=localhost\\SQLEXPRESS;Database=newProjectManagerApp;Trusted_Connection=True;";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT Username FROM Users WHERE UserId = @UserId";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@UserId", UserId);
+                        object result = cmd.ExecuteScalar();
+                        if (result != null)
+                        {
+                            senderName = result.ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Could not find username for the current user.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading username: " + ex.Message);
+            }
+        }
+
         private void ConnectToServer()
         {
+            if (string.IsNullOrEmpty(senderName))
+            {
+                MessageBox.Show("Username not loaded. Cannot connect to chat server.");
+                return;
+            }
+
             try
             {
                 client = new TcpClient();
@@ -82,10 +121,15 @@ namespace Project_Manager_App
                     {
                         string sender = parts[0];
                         string content = parts[1];
+                        
+                        // Add message to UI first
                         AddMessageToUI(DateTime.Now, sender, content);
                         
-                        // Save received message to database
-                        SaveMessageToDatabase(sender, content);
+                        // Then save to database if we have a valid chat ID
+                        if (currentChatId != -1)
+                        {
+                            SaveMessageToDatabase(sender, content);
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -107,10 +151,17 @@ namespace Project_Manager_App
                 return;
             }
 
-            MessageItem messageItem = new MessageItem();
-            messageItem.SetMessageData(time, sender, message);
-            flowLayoutPanel1.Controls.Add(messageItem);
-            flowLayoutPanel1.ScrollControlIntoView(messageItem);
+            try
+            {
+                MessageItem messageItem = new MessageItem();
+                messageItem.SetMessageData(time, sender, message);
+                flowLayoutPanel1.Controls.Add(messageItem);
+                flowLayoutPanel1.ScrollControlIntoView(messageItem);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error adding message to UI: " + ex.Message);
+            }
         }
 
         private void PictureBox_sendButton_Click(object sender, EventArgs e)
@@ -120,8 +171,22 @@ namespace Project_Manager_App
 
             try
             {
-                byte[] messageBytes = Encoding.UTF8.GetBytes(txt_messageBox.Text);
+                string messageContent = txt_messageBox.Text;
+                // Format message with username
+                string formattedMessage = $"{senderName}: {messageContent}";
+                byte[] messageBytes = Encoding.UTF8.GetBytes(formattedMessage);
                 stream.Write(messageBytes, 0, messageBytes.Length);
+                
+                // Add message to UI immediately
+                AddMessageToUI(DateTime.Now, senderName, messageContent);
+                
+                // Save message to database if we have a valid chat ID
+                if (currentChatId != -1)
+                {
+                    SaveMessageToDatabase(senderName, messageContent);
+                }
+                
+                // Clear the message box
                 txt_messageBox.Clear();
             }
             catch (Exception ex)
@@ -152,13 +217,31 @@ namespace Project_Manager_App
 
         private void LoadMessagesByProject(int projectId)
         {
+            if (UserId == -1) return; // Don't load if UserId is not set
+
             string connectionString = "Server=localhost\\SQLEXPRESS;Database=newProjectManagerApp;Trusted_Connection=True;";
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    // First, get or create ChatId for this project
+                    // First, verify user has access to this project
+                    string accessQuery = @"
+                        SELECT COUNT(*) FROM ProjectMembers 
+                        WHERE ProjectId = @ProjectId AND UserId = @UserId";
+                    using (SqlCommand cmd = new SqlCommand(accessQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ProjectId", projectId);
+                        cmd.Parameters.AddWithValue("@UserId", UserId);
+                        int accessCount = (int)cmd.ExecuteScalar();
+                        if (accessCount == 0)
+                        {
+                            MessageBox.Show("You don't have access to this project's chat.");
+                            return;
+                        }
+                    }
+
+                    // Get or create ChatId for this project
                     string chatQuery = @"
                         SELECT ChatId FROM Chats WHERE ProjectId = @ProjectId;
                         IF @@ROWCOUNT = 0
@@ -204,7 +287,7 @@ namespace Project_Manager_App
 
         private void SaveMessageToDatabase(string sender, string message)
         {
-            if (currentChatId == -1) return;
+            if (currentChatId == -1 || UserId == -1) return;
 
             string connectionString = "Server=localhost\\SQLEXPRESS;Database=newProjectManagerApp;Trusted_Connection=True;";
             try
@@ -212,17 +295,31 @@ namespace Project_Manager_App
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = @"
+                    // First get the sender's UserId from username
+                    int senderId;
+                    string getSenderQuery = "SELECT UserId FROM Users WHERE Username = @Username";
+                    using (SqlCommand cmd = new SqlCommand(getSenderQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Username", sender);
+                        object result = cmd.ExecuteScalar();
+                        if (result == null)
+                        {
+                            MessageBox.Show($"Could not find user ID for sender: {sender}");
+                            return;
+                        }
+                        senderId = Convert.ToInt32(result);
+                    }
+
+                    // Then insert the message
+                    string insertQuery = @"
                         INSERT INTO Messages (ChatId, MessageTime, Message, Sender)
-                        SELECT @ChatId, @MessageTime, @Message, UserId
-                        FROM Users
-                        WHERE Username = @Sender";
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                        VALUES (@ChatId, @MessageTime, @Message, @Sender)";
+                    using (SqlCommand cmd = new SqlCommand(insertQuery, conn))
                     {
                         cmd.Parameters.AddWithValue("@ChatId", currentChatId);
                         cmd.Parameters.AddWithValue("@MessageTime", DateTime.Now);
                         cmd.Parameters.AddWithValue("@Message", message);
-                        cmd.Parameters.AddWithValue("@Sender", sender);
+                        cmd.Parameters.AddWithValue("@Sender", senderId);
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -235,15 +332,22 @@ namespace Project_Manager_App
 
         private void LoadProjects()
         {
+            if (UserId == -1) return; // Don't load if UserId is not set
+
             string connectionString = "Server=localhost\\SQLEXPRESS;Database=newProjectManagerApp;Trusted_Connection=True;";
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "SELECT ProjectId, ProjectName FROM Projects";
+                    string query = @"
+                        SELECT DISTINCT p.ProjectId, p.ProjectName 
+                        FROM Projects p
+                        INNER JOIN ProjectMembers pm ON p.ProjectId = pm.ProjectId
+                        WHERE pm.UserId = @UserId";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
+                        cmd.Parameters.AddWithValue("@UserId", UserId);
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
                             listView1.Items.Clear();
@@ -268,8 +372,18 @@ namespace Project_Manager_App
 
         private void pictureBox_settingButton_Click_1(object sender, EventArgs e)
         {
-            if (selectedProjectId > 0 && OnOpenChatSetting != null)
-                OnOpenChatSetting(selectedProjectId);
+            if (selectedProjectId > 0)
+            {
+                var chatSetting = new chatSetting(UserId);
+                chatSetting.LoadGroupInfo(selectedProjectId);
+
+                // Gọi LoadUC từ Main
+                var mainForm = this.FindForm() as Main;
+                if (mainForm != null)
+                {
+                    mainForm.LoadUC(chatSetting);
+                }
+            }
         }
 
         private void CleanupResources()

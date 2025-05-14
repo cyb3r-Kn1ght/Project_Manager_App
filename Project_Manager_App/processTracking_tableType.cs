@@ -136,5 +136,18 @@ namespace Project_Manager_App
         {
 
         }
+
+        private void pictureBox_filterButton_Click_1(object sender, EventArgs e)
+        {
+            if (projectList.SelectedValue != null)
+            {
+                if (int.TryParse(projectList.SelectedValue.ToString(), out int projectId))
+                {
+                    DateTime fromDate = dateTimePicker1.Value.Date;
+                    DateTime toDate = dateTimePicker2.Value.Date;
+                    LoadTasks(projectId, fromDate, toDate);
+                }
+            }
+        }
     }
 }

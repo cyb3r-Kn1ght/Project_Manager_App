@@ -134,7 +134,7 @@
             label3.Size = new Size(92, 20);
             label3.TabIndex = 1;
             label3.Text = "Description: ";
-            label3.Click += label3_Click;
+            //label3.Click += label3_Click;
             // 
             // label2
             // 

@@ -150,7 +150,7 @@ namespace Project_Manager_App
             // Khi nhấn vào pictureBox_back, quay lại memberlist của đúng project
             Main mainForm = (Main)Application.OpenForms["Main"];
             var memberListControl = new memberlist("Project Alpha");  // Tạo lại memberlist với đúng tên project
-            mainForm.LoadUserControl(memberListControl);  // Gọi phương thức LoadUserControl trong Main để quay lại memberlist
+            mainForm.LoadUC(memberListControl);  // Gọi phương thức LoadUserControl trong Main để quay lại memberlist
         }
     }
 

@@ -85,7 +85,7 @@ namespace Project_Manager_App
         {
             // Tìm form chính để load lại giao diện
             Main mainForm = (Main)Application.OpenForms["Main"];
-            mainForm.LoadUserControl(new project_manager());  // Gọi phương thức LoadUserControl trong Main
+            mainForm.LoadUC(new project_manager());  // Gọi phương thức LoadUserControl trong Main
         }
     }
 

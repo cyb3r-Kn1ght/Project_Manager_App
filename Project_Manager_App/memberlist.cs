@@ -70,7 +70,7 @@ namespace Project_Manager_App
             // Khi nhấn vào pictureBox_back, quay lại project_manager
             Main mainForm = (Main)Application.OpenForms["Main"];
             var pm = new project_manager();  // Tạo lại project_manager
-            mainForm.LoadUserControl(pm);    // Gọi phương thức LoadUserControl trong Main để quay lại project_manager
+            mainForm.LoadUC(pm);    // Gọi phương thức LoadUserControl trong Main để quay lại project_manager
         }
 
     }

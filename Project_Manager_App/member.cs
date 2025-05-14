@@ -41,7 +41,7 @@ namespace Project_Manager_App
 
             // Tìm form chính để load member_details
             Main mainForm = (Main)Application.OpenForms["Main"];
-            mainForm.LoadUserControl(memberDetailsControl);  // Quay lại UserControl trong Main
+            mainForm.LoadUC(memberDetailsControl);  // Quay lại UserControl trong Main
         }
     }
 
