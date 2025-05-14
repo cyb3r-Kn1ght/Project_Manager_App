@@ -21,13 +21,15 @@ namespace Project_Manager_App
     public partial class mainPage : UserControl
     {
         private int _userId;
-
+        public Main MainForm { get; set; } // Thêm property này
         public mainPage(int userId)
         {
             InitializeComponent();
             _userId = userId;
+             
+            //MainForm = this.ParentForm as Main;
 
-            headerUserControl1.MainForm = this.ParentForm as Main;
+            //headerUserControl1.MainForm = this.ParentForm as Main;
 
             LoadUserInfoToHeader(userId);
 
@@ -75,13 +77,14 @@ namespace Project_Manager_App
                     }
                 }
             }
-            
-        }
 
+        }
         public void SetMainFormForHeader(Main mainForm)
         {
-            headerUserControl1.MainForm = mainForm;
+            MainForm = mainForm; // Gán cho mainPage
+            headerUserControl1.MainForm = mainForm; // Gán cho header
         }
+
         private void LoadUserInfoToHeader(int userId)
         {
             var connString = AppConfig.GetConnectionString("DefaultConnection");
@@ -124,6 +127,16 @@ namespace Project_Manager_App
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void headerUserControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tab_Project1_Load_1(object sender, EventArgs e)
         {
 
         }

@@ -86,9 +86,11 @@
             headerUserControl1.BackColor = Color.DeepSkyBlue;
             headerUserControl1.Dock = DockStyle.Fill;
             headerUserControl1.Location = new Point(0, 0);
+            headerUserControl1.MainForm = null;
             headerUserControl1.Name = "headerUserControl1";
             headerUserControl1.Size = new Size(1045, 74);
             headerUserControl1.TabIndex = 0;
+            headerUserControl1.Load += headerUserControl1_Load;
             // 
             // label_title
             // 
@@ -121,6 +123,7 @@
             tab_Project1.ProjectTitle = null;
             tab_Project1.Size = new Size(519, 278);
             tab_Project1.TabIndex = 0;
+            tab_Project1.Load += tab_Project1_Load_1;
             // 
             // panel3
             // 
