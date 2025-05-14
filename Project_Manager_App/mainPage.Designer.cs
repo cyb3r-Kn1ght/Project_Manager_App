@@ -30,7 +30,6 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             panel_DisplayHeader = new Panel();
-            headerUserControl1 = new headerUserControl();
             label_title = new Label();
             panel1 = new Panel();
             tab_Project1 = new tab_Project();
@@ -40,6 +39,7 @@
             tab_Project4 = new tab_Project();
             panel2 = new Panel();
             tab_Project2 = new tab_Project();
+            headerUserControl1 = new headerUserControl();
             tableLayoutPanel1.SuspendLayout();
             panel_DisplayHeader.SuspendLayout();
             panel1.SuspendLayout();
@@ -81,16 +81,6 @@
             panel_DisplayHeader.Size = new Size(244, 74);
             panel_DisplayHeader.TabIndex = 0;
             // 
-            // headerUserControl1
-            // 
-            headerUserControl1.BackColor = Color.DeepSkyBlue;
-            headerUserControl1.Dock = DockStyle.Fill;
-            headerUserControl1.Location = new Point(0, 0);
-            headerUserControl1.MainForm = null;
-            headerUserControl1.Name = "headerUserControl1";
-            headerUserControl1.Size = new Size(244, 74);
-            headerUserControl1.TabIndex = 0;
-            // 
             // label_title
             // 
             label_title.Anchor = AnchorStyles.Left;
@@ -116,12 +106,15 @@
             // 
             tab_Project1.Dock = DockStyle.Fill;
             tab_Project1.Location = new Point(0, 0);
+            tab_Project1.Margin = new Padding(4, 4, 4, 4);
             tab_Project1.Name = "tab_Project1";
             tab_Project1.Progress = 0;
             tab_Project1.ProjectImage = null;
             tab_Project1.ProjectTitle = null;
             tab_Project1.Size = new Size(119, 278);
             tab_Project1.TabIndex = 0;
+            tab_Project1.UserID = 0;
+            tab_Project1.Load += tab_Project1_Load_1;
             // 
             // panel3
             // 
@@ -136,12 +129,14 @@
             // 
             tab_Project3.Dock = DockStyle.Fill;
             tab_Project3.Location = new Point(0, 0);
+            tab_Project3.Margin = new Padding(4, 4, 4, 4);
             tab_Project3.Name = "tab_Project3";
             tab_Project3.Progress = 0;
             tab_Project3.ProjectImage = null;
             tab_Project3.ProjectTitle = null;
             tab_Project3.Size = new Size(119, 279);
             tab_Project3.TabIndex = 0;
+            tab_Project3.UserID = 0;
             // 
             // panel4
             // 
@@ -156,12 +151,14 @@
             // 
             tab_Project4.Dock = DockStyle.Fill;
             tab_Project4.Location = new Point(0, 0);
+            tab_Project4.Margin = new Padding(4, 4, 4, 4);
             tab_Project4.Name = "tab_Project4";
             tab_Project4.Progress = 0;
             tab_Project4.ProjectImage = null;
             tab_Project4.ProjectTitle = null;
             tab_Project4.Size = new Size(119, 279);
             tab_Project4.TabIndex = 0;
+            tab_Project4.UserID = 0;
             // 
             // panel2
             // 
@@ -176,12 +173,24 @@
             // 
             tab_Project2.Dock = DockStyle.Fill;
             tab_Project2.Location = new Point(0, 0);
+            tab_Project2.Margin = new Padding(4, 4, 4, 4);
             tab_Project2.Name = "tab_Project2";
             tab_Project2.Progress = 0;
             tab_Project2.ProjectImage = null;
             tab_Project2.ProjectTitle = null;
             tab_Project2.Size = new Size(119, 278);
             tab_Project2.TabIndex = 0;
+            tab_Project2.UserID = 0;
+            // 
+            // headerUserControl1
+            // 
+            headerUserControl1.BackColor = Color.DeepSkyBlue;
+            headerUserControl1.Dock = DockStyle.Fill;
+            headerUserControl1.Location = new Point(0, 0);
+            headerUserControl1.MainForm = null;
+            headerUserControl1.Name = "headerUserControl1";
+            headerUserControl1.Size = new Size(1045, 74);
+            headerUserControl1.TabIndex = 0;
             // 
             // mainPage
             // 
@@ -204,7 +213,6 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel_DisplayHeader;
-        private headerUserControl headerUserControl1;
         private Label label_title;
         public Panel panel1;
         private Panel panel3;
@@ -214,5 +222,6 @@
         private Panel panel2;
         private tab_Project tab_Project2;
         private tab_Project tab_Project1;
+        private headerUserControl headerUserControl1;
     }
 }

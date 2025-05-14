@@ -15,11 +15,12 @@ namespace Project_Manager_App
     public partial class memberlist : UserControl
     {
         private string projectName;
-
-        public memberlist(string projectName)
+        private int userID; // Thuộc tính cho UserId
+        public memberlist(string projectName, int userID)
         {
             InitializeComponent();
             this.projectName = projectName;  // Lưu tên dự án
+            this.userID = userID; // Lưu userID
             LoadProjectMembers();  // Gọi phương thức để load thành viên
             pictureBox_back.Click += PictureBox_back_Click;  // Đăng ký sự kiện click cho pictureBox_back
         }
@@ -54,7 +55,8 @@ namespace Project_Manager_App
                         member memberControl = new member();
                         memberControl.Username = username;  // Sử dụng thuộc tính Username
                         memberControl.Role = role;          // Sử dụng thuộc tính Role
-
+                        memberControl.ProjectName = projectName; // Truyền tên dự án vào member control
+                        memberControl.userID = this.userID; // Truyền userID vào member control
                         // Thêm memberControl vào flowLayoutPanel1
                         flowLayoutPanel1.Controls.Add(memberControl);
                     }
@@ -69,8 +71,10 @@ namespace Project_Manager_App
         {
             // Khi nhấn vào pictureBox_back, quay lại project_manager
             Main mainForm = (Main)Application.OpenForms["Main"];
-            var pm = new project_manager();  // Tạo lại project_manager
-            mainForm.LoadUC(pm);    // Gọi phương thức LoadUserControl trong Main để quay lại project_manager
+            project_manager projectManagerControl = new project_manager();
+            projectManagerControl.userID = this.userID;  // Truyền userID vào project_manager
+            projectManagerControl.currentProjectName = projectName;  // Truyền tên dự án vào project_manager  
+            mainForm.LoadUserControl(projectManagerControl);    // Gọi phương thức LoadUserControl trong Main để quay lại project_manager
         }
 
     }

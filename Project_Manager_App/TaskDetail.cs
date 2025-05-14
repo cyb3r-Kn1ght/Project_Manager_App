@@ -14,10 +14,16 @@ namespace Project_Manager_App
     // TaskDetail.cs
     public partial class TaskDetail : UserControl
     {
+        private string projectName;
+        public int userID { get; set; } // Thuộc tính cho TaskId
         public TaskDetail()
         {
             InitializeComponent();
             pictureBox1.Click += PictureBox1_Click; // Đăng ký sự kiện click cho pictureBox1
+        }
+        public TaskDetail(string projectName) : this()
+        {
+            this.projectName = projectName; // Lưu tên dự án
         }
 
         // Phương thức để hiển thị chi tiết task
@@ -85,7 +91,10 @@ namespace Project_Manager_App
         {
             // Tìm form chính để load lại giao diện
             Main mainForm = (Main)Application.OpenForms["Main"];
-            mainForm.LoadUC(new project_manager());  // Gọi phương thức LoadUserControl trong Main
+            project_manager pm = new project_manager();
+            pm.currentProjectName = this.projectName;  // Truyền tên dự án vào project_manager
+            pm.userID = this.userID;  // Truyền UserID vào project_manager
+            mainForm.LoadUserControl(pm);  // Gọi phương thức LoadUserControl trong Main
         }
     }
 

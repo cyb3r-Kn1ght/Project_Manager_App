@@ -32,7 +32,7 @@ namespace Project_Manager_App
             {
                conn.Open();
         var sql = "SELECT COUNT(*) FROM Users WHERE Username = @username AND Password = @password";
-        using (var cmd = new SqlCommand(sql, conn))
+                using (var cmd = new SqlCommand(sql, conn))
         {
             cmd.Parameters.AddWithValue("@username", username);
             cmd.Parameters.AddWithValue("@password", password); // Nếu mật khẩu đã mã hóa, cần mã hóa trước khi so sánh
@@ -42,6 +42,8 @@ namespace Project_Manager_App
         }
             }
         }
+
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -112,7 +114,7 @@ namespace Project_Manager_App
 
             else
             {
-                MessageBox.Show("Login failed. Please check your username and password.");
+                MessageBox.Show($"Login failed. Please check your username and password");
             }
         }
 

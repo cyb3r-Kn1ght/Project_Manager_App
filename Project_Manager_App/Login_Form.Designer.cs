@@ -39,6 +39,7 @@
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             label1 = new Label();
+            sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
             tableLayoutPanel1.SuspendLayout();
             panel_formLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -220,5 +221,6 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private Label label1;
+        private Microsoft.Data.SqlClient.SqlCommandBuilder sqlCommandBuilder1;
     }
 }

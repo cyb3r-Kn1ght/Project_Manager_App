@@ -14,10 +14,18 @@ namespace Project_Manager_App
     // member_details.cs
     public partial class member_details : UserControl
     {
+        private string projectName;  // Biến để lưu tên dự án
+        private int userID; // Thuộc tính cho TaskId
         public member_details()
         {
             InitializeComponent();
-            pictureBox1.Click += PictureBox_back_Click;  // Thêm sự kiện click cho pictureBox_back để quay lại memberlist
+            pictureBox1.Click += PictureBox1_Click;  // Thêm sự kiện click cho pictureBox_back để quay lại memberlist
+        }
+
+        public member_details(string projectName, int userID) : this()
+        {
+            this.projectName = projectName;
+            this.userID = userID;  // Lưu userID
         }
 
         public void ShowMemberDetails(string username)
@@ -145,12 +153,13 @@ namespace Project_Manager_App
         }
 
 
-        private void PictureBox_back_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
             // Khi nhấn vào pictureBox_back, quay lại memberlist của đúng project
             Main mainForm = (Main)Application.OpenForms["Main"];
-            var memberListControl = new memberlist("Project Alpha");  // Tạo lại memberlist với đúng tên project
-            mainForm.LoadUC(memberListControl);  // Gọi phương thức LoadUserControl trong Main để quay lại memberlist
+            memberlist memberListControl = new memberlist(projectName, userID);  // Tạo lại memberlist với đúng tên project
+
+            mainForm.LoadUserControl(memberListControl);  // Gọi phương thức LoadUserControl trong Main để quay lại memberlist
         }
     }
 

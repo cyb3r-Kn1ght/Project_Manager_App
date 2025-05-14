@@ -8,6 +8,14 @@ namespace Project_Manager_App
 
     public partial class tasks : UserControl
     {
+        private string projectName;
+        public string ProjectName
+        {
+            get => projectName;
+            set => projectName = value;
+        }
+
+        public int userID { get; set; } // Thuộc tính cho TaskId
         public tasks()
         {
             InitializeComponent();
@@ -42,8 +50,9 @@ namespace Project_Manager_App
             string taskHour = TaskHour;
 
             // Tạo và hiển thị TaskDetail
-            TaskDetail taskDetailControl = new TaskDetail();
+            TaskDetail taskDetailControl = new TaskDetail(this.projectName);
             taskDetailControl.ShowTaskDetail(taskTitle, taskDay, taskHour);
+            taskDetailControl.userID = this.userID; // Truyền userID vào TaskDetail
 
             // Tìm form chính để load TaskDetail
             Main mainForm = (Main)Application.OpenForms["Main"];

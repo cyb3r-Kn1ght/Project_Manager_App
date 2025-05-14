@@ -13,6 +13,13 @@ namespace Project_Manager_App
     // member.cs
     public partial class member : UserControl
     {
+        private string projectName;
+        public int userID { get; set; } // Thuộc tính cho TaskId
+        public string ProjectName
+        {
+            get => projectName;
+            set => projectName = value;
+        }
         public member()
         {
             InitializeComponent();
@@ -36,7 +43,7 @@ namespace Project_Manager_App
         private void Label_name_Click(object sender, EventArgs e)
         {
             // Khi nhấn vào label_name, hiển thị member_details của member đó
-            member_details memberDetailsControl = new member_details();
+            member_details memberDetailsControl = new member_details(this.projectName, this.userID);
             memberDetailsControl.ShowMemberDetails(Username);  // Truyền Username vào phương thức ShowMemberDetails
 
             // Tìm form chính để load member_details

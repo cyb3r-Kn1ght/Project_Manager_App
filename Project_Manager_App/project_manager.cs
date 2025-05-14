@@ -7,46 +7,37 @@ namespace Project_Manager_App
 {
     public partial class project_manager : UserControl
     {
-        public string currentProjectName{get;set;} = "Project Alpha";
+        public string currentProjectName
+        {
+            get { return label_ProjectName.Text; }
+            set { label_ProjectName.Text = value; }
+        }
+        public int userID
+        {
+            get;
+            set;
+        }
         public project_manager()
         {
             InitializeComponent();
-            LoadProjectName();
-            LoadTasks();  // Load tasks when the control is created
+            LoadTasks();  
             button_member.Click += Button_member_Click;
+            pictureBox1.Click += PictureBox1_Click; // Đăng ký sự kiện click cho pictureBox1
         }
 
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+            mainPage mainPageControl = new mainPage(this.userID);
+
+            Main mainForm = (Main)Application.OpenForms["Main"];
+            mainForm.LoadUserControl(mainPageControl);  // Gọi phương thức LoadUserControl trong Main
+        }
         private void Button_member_Click(object sender, EventArgs e)
         {
             // Tạo và hiển thị memberlist
-            memberlist memberListControl = new memberlist(currentProjectName);
+            memberlist memberListControl = new memberlist(currentProjectName, userID); // Truyền userID vào memberlist
             Main mainForm = (Main)Application.OpenForms["Main"];
             mainForm.LoadUC(memberListControl);
-        }
-        private void LoadProjectName()
-        {
-            try
-            {
-                string connectionString = "Server=localhost\\SQLEXPRESS;Database=ProjectManagerDB;Trusted_Connection=True;Encrypt=False";
-                string query = "SELECT ProjectName FROM Projects WHERE ProjectName = @currentProjectName";  // You can change this query if needed
-
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-                    adapter.SelectCommand.Parameters.AddWithValue("@currentProjectName", currentProjectName);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-
-                    if (dt.Rows.Count > 0)
-                    {
-                        label_ProjectName.Text = dt.Rows[0]["ProjectName"].ToString(); // Set project name to label_ProjectName
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show($"Lỗi kết nối SQL Server: {ex.Message}", "Lỗi kết nối", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
         private void LoadTasks()
         {
@@ -81,20 +72,9 @@ namespace Project_Manager_App
                         taskControl.TaskTitle = content;  // Set the task content
                         taskControl.TaskDay = finishDate.ToString("dd/MM/yyyy");  // Set the finish date
                         taskControl.TaskHour = remainingTime;  // Set the remaining time or "Overdue"
+                        taskControl.ProjectName = currentProjectName;  // Set the project name
+                        taskControl.userID = this.userID;
 
-                        // Add task to corresponding section based on task status
-                        if (taskStatus == "Pending")
-                        {
-                            taskControl.BackColor = Color.LightCoral;  // Set color for "Việc cần làm"
-                        }
-                        else if (taskStatus == "In Progress")
-                        {
-                            taskControl.BackColor = Color.Yellow;  // Set color for "Đang thực hiện" 
-                        }
-                        else if (taskStatus == "Completed")
-                        {
-                            taskControl.BackColor = Color.LightGreen;  // Set color for "Đã hoàn thành"
-                        }
                         flowTaskList.Controls.Add(taskControl);  // Add the task control to the flow layout panel
                     }
                 }
@@ -154,6 +134,8 @@ namespace Project_Manager_App
                         taskControl.TaskTitle = content;  // Set task content
                         taskControl.TaskDay = finishDate.ToString("dd/MM/yyyy");  // Set finish date
                         taskControl.TaskHour = remainingTime;  // Set remaining time
+                        taskControl.ProjectName = currentProjectName;  // Set project name
+                        taskControl.userID = this.userID;  // Set user ID
 
                         flowTaskList.Controls.Add(taskControl);
                     }
