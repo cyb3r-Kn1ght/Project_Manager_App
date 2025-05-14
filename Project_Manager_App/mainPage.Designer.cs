@@ -30,7 +30,6 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             panel_DisplayHeader = new Panel();
-            headerUserControl1 = new headerUserControl();
             label_title = new Label();
             panel1 = new Panel();
             tab_Project1 = new tab_Project();
@@ -40,6 +39,7 @@
             tab_Project4 = new tab_Project();
             panel2 = new Panel();
             tab_Project2 = new tab_Project();
+            headerUserControl1 = new headerUserControl();
             tableLayoutPanel1.SuspendLayout();
             panel_DisplayHeader.SuspendLayout();
             panel1.SuspendLayout();
@@ -61,14 +61,13 @@
             tableLayoutPanel1.Controls.Add(panel2, 1, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Margin = new Padding(4, 4, 4, 4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 4;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 74F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 59F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(1314, 885);
+            tableLayoutPanel1.Size = new Size(1051, 708);
             tableLayoutPanel1.TabIndex = 0;
             tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
@@ -77,33 +76,19 @@
             tableLayoutPanel1.SetColumnSpan(panel_DisplayHeader, 2);
             panel_DisplayHeader.Controls.Add(headerUserControl1);
             panel_DisplayHeader.Dock = DockStyle.Fill;
-            panel_DisplayHeader.Location = new Point(4, 4);
-            panel_DisplayHeader.Margin = new Padding(4, 4, 4, 4);
+            panel_DisplayHeader.Location = new Point(3, 3);
             panel_DisplayHeader.Name = "panel_DisplayHeader";
-            panel_DisplayHeader.Size = new Size(1306, 92);
+            panel_DisplayHeader.Size = new Size(1045, 74);
             panel_DisplayHeader.TabIndex = 0;
-            // 
-            // headerUserControl1
-            // 
-            headerUserControl1.BackColor = Color.DeepSkyBlue;
-            headerUserControl1.Dock = DockStyle.Fill;
-            headerUserControl1.Location = new Point(0, 0);
-            headerUserControl1.MainForm = null;
-            headerUserControl1.Margin = new Padding(5, 5, 5, 5);
-            headerUserControl1.Name = "headerUserControl1";
-            headerUserControl1.Size = new Size(1306, 92);
-            headerUserControl1.TabIndex = 0;
-            headerUserControl1.Load += headerUserControl1_Load;
             // 
             // label_title
             // 
             label_title.Anchor = AnchorStyles.Left;
             label_title.AutoSize = true;
             label_title.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label_title.Location = new Point(4, 114);
-            label_title.Margin = new Padding(4, 0, 4, 0);
+            label_title.Location = new Point(3, 90);
             label_title.Name = "label_title";
-            label_title.Size = new Size(233, 45);
+            label_title.Size = new Size(199, 38);
             label_title.TabIndex = 1;
             label_title.Text = "Dự án hiện tại ";
             // 
@@ -111,10 +96,9 @@
             // 
             panel1.Controls.Add(tab_Project1);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(4, 178);
-            panel1.Margin = new Padding(4, 4, 4, 4);
+            panel1.Location = new Point(3, 142);
             panel1.Name = "panel1";
-            panel1.Size = new Size(649, 347);
+            panel1.Size = new Size(519, 278);
             panel1.TabIndex = 2;
             panel1.Paint += panel1_Paint_1;
             // 
@@ -122,89 +106,99 @@
             // 
             tab_Project1.Dock = DockStyle.Fill;
             tab_Project1.Location = new Point(0, 0);
-            tab_Project1.Margin = new Padding(5, 5, 5, 5);
+            tab_Project1.Margin = new Padding(4, 4, 4, 4);
             tab_Project1.Name = "tab_Project1";
             tab_Project1.Progress = 0;
             tab_Project1.ProjectImage = null;
             tab_Project1.ProjectTitle = null;
-            tab_Project1.Size = new Size(649, 347);
+            tab_Project1.Size = new Size(519, 278);
             tab_Project1.TabIndex = 0;
+            tab_Project1.UserID = 0;
             tab_Project1.Load += tab_Project1_Load_1;
             // 
             // panel3
             // 
             panel3.Controls.Add(tab_Project3);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(4, 533);
-            panel3.Margin = new Padding(4, 4, 4, 4);
+            panel3.Location = new Point(3, 426);
             panel3.Name = "panel3";
-            panel3.Size = new Size(649, 348);
+            panel3.Size = new Size(519, 279);
             panel3.TabIndex = 4;
             // 
             // tab_Project3
             // 
             tab_Project3.Dock = DockStyle.Fill;
             tab_Project3.Location = new Point(0, 0);
-            tab_Project3.Margin = new Padding(5, 5, 5, 5);
+            tab_Project3.Margin = new Padding(4, 4, 4, 4);
             tab_Project3.Name = "tab_Project3";
             tab_Project3.Progress = 0;
             tab_Project3.ProjectImage = null;
             tab_Project3.ProjectTitle = null;
-            tab_Project3.Size = new Size(649, 348);
+            tab_Project3.Size = new Size(519, 279);
             tab_Project3.TabIndex = 0;
+            tab_Project3.UserID = 0;
             // 
             // panel4
             // 
             panel4.Controls.Add(tab_Project4);
             panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(661, 533);
-            panel4.Margin = new Padding(4, 4, 4, 4);
+            panel4.Location = new Point(528, 426);
             panel4.Name = "panel4";
-            panel4.Size = new Size(649, 348);
+            panel4.Size = new Size(520, 279);
             panel4.TabIndex = 5;
             // 
             // tab_Project4
             // 
             tab_Project4.Dock = DockStyle.Fill;
             tab_Project4.Location = new Point(0, 0);
-            tab_Project4.Margin = new Padding(5, 5, 5, 5);
+            tab_Project4.Margin = new Padding(4, 4, 4, 4);
             tab_Project4.Name = "tab_Project4";
             tab_Project4.Progress = 0;
             tab_Project4.ProjectImage = null;
             tab_Project4.ProjectTitle = null;
-            tab_Project4.Size = new Size(649, 348);
+            tab_Project4.Size = new Size(520, 279);
             tab_Project4.TabIndex = 0;
+            tab_Project4.UserID = 0;
             // 
             // panel2
             // 
             panel2.Controls.Add(tab_Project2);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(661, 178);
-            panel2.Margin = new Padding(4, 4, 4, 4);
+            panel2.Location = new Point(528, 142);
             panel2.Name = "panel2";
-            panel2.Size = new Size(649, 347);
+            panel2.Size = new Size(520, 278);
             panel2.TabIndex = 6;
             // 
             // tab_Project2
             // 
             tab_Project2.Dock = DockStyle.Fill;
             tab_Project2.Location = new Point(0, 0);
-            tab_Project2.Margin = new Padding(5, 5, 5, 5);
+            tab_Project2.Margin = new Padding(4, 4, 4, 4);
             tab_Project2.Name = "tab_Project2";
             tab_Project2.Progress = 0;
             tab_Project2.ProjectImage = null;
             tab_Project2.ProjectTitle = null;
-            tab_Project2.Size = new Size(649, 347);
+            tab_Project2.Size = new Size(520, 278);
             tab_Project2.TabIndex = 0;
+            tab_Project2.UserID = 0;
+            // 
+            // headerUserControl1
+            // 
+            headerUserControl1.BackColor = Color.DeepSkyBlue;
+            headerUserControl1.Dock = DockStyle.Fill;
+            headerUserControl1.Location = new Point(0, 0);
+            headerUserControl1.MainForm = null;
+            headerUserControl1.Name = "headerUserControl1";
+            headerUserControl1.Size = new Size(1045, 74);
+            headerUserControl1.TabIndex = 0;
             // 
             // mainPage
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutPanel1);
-            Margin = new Padding(4, 4, 4, 4);
             Name = "mainPage";
-            Size = new Size(1314, 885);
+            Size = new Size(1051, 708);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             panel_DisplayHeader.ResumeLayout(false);
@@ -219,7 +213,6 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel_DisplayHeader;
-        private headerUserControl headerUserControl1;
         private Label label_title;
         public Panel panel1;
         private Panel panel3;
@@ -229,5 +222,6 @@
         private Panel panel2;
         private tab_Project tab_Project2;
         private tab_Project tab_Project1;
+        private headerUserControl headerUserControl1;
     }
 }
