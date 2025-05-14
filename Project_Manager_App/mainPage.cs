@@ -35,7 +35,7 @@ namespace Project_Manager_App
             using (var conn = new SqlConnection(connString))
             {
                 conn.Open(); // Mở kết nối 
-                var sql = @"SELECT TOP 4 p.ProjectName, p.ImageNameofProject
+                var sql = @"SELECT p.ProjectName, p.ImageNameofProject
                 FROM Projects p
                 INNER JOIN ProjectMembers pm ON p.ProjectId = pm.ProjectId
                 WHERE pm.UserId = @UserId";
@@ -57,6 +57,7 @@ namespace Project_Manager_App
                         {
                             var project = list[i];
                             var projectUC = new tab_Project();
+                            projectUC.UserID = _userId;
                             projectUC.SetProject(project.ProjectName, project.ImagePath);
 
                             panels[i].Controls.Clear(); // Xóa control cũ nếu có

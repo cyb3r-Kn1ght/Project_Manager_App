@@ -37,14 +37,6 @@ namespace Project_Manager_App
 
 
 
-        public void LoadUC(UserControl uc)
-        {
-            // Giả sử bạn có 1 Panel tên là panelMain để chứa các UserControl
-            panelMain.Controls.Clear();         // Xóa UC hiện tại (nếu có)
-            uc.Dock = DockStyle.Fill;           // Cho UC chiếm toàn bộ panel
-            panelMain.Controls.Add(uc);         // Thêm UC mới vào
-        }
-
 
         private void panelMain_Paint(object sender, PaintEventArgs e)
         {
