@@ -94,7 +94,7 @@ namespace Project_Manager_App
             project_manager pm = new project_manager();
             pm.currentProjectName = this.projectName;  // Truyền tên dự án vào project_manager
             pm.userID = this.userID;  // Truyền UserID vào project_manager
-            mainForm.LoadUserControl(pm);  // Gọi phương thức LoadUserControl trong Main
+            mainForm.LoadUC(pm);  // Gọi phương thức LoadUserControl trong Main
         }
     }
 

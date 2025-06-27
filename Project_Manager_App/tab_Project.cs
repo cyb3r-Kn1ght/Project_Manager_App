@@ -80,7 +80,7 @@ namespace Project_Manager_App
 
             // Tìm form chính để load project_manager
             Main mainForm = (Main)Application.OpenForms["Main"];
-            mainForm.LoadUserControl(projectManagerControl);
+            mainForm.LoadUC(projectManagerControl);
         }
 
         private void processBarofProject_Click_1(object sender, EventArgs e)

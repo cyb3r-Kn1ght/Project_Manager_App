@@ -74,7 +74,7 @@ namespace Project_Manager_App
             project_manager projectManagerControl = new project_manager();
             projectManagerControl.userID = this.userID;  // Truyền userID vào project_manager
             projectManagerControl.currentProjectName = projectName;  // Truyền tên dự án vào project_manager  
-            mainForm.LoadUserControl(projectManagerControl);    // Gọi phương thức LoadUserControl trong Main để quay lại project_manager
+            mainForm.LoadUC(projectManagerControl);    // Gọi phương thức LoadUC trong Main để quay lại project_manager
         }
 
     }

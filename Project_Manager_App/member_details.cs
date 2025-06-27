@@ -159,7 +159,7 @@ namespace Project_Manager_App
             Main mainForm = (Main)Application.OpenForms["Main"];
             memberlist memberListControl = new memberlist(projectName, userID);  // Tạo lại memberlist với đúng tên project
 
-            mainForm.LoadUserControl(memberListControl);  // Gọi phương thức LoadUserControl trong Main để quay lại memberlist
+            mainForm.LoadUC(memberListControl);  // Gọi phương thức LoadUserControl trong Main để quay lại memberlist
         }
     }
 

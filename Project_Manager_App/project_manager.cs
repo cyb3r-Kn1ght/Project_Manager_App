@@ -30,7 +30,7 @@ namespace Project_Manager_App
             mainPage mainPageControl = new mainPage(this.userID);
 
             Main mainForm = (Main)Application.OpenForms["Main"];
-            mainForm.LoadUserControl(mainPageControl);  // Gọi phương thức LoadUserControl trong Main
+            mainForm.LoadUC(mainPageControl);  // Gọi phương thức LoadUserControl trong Main
         }
         private void Button_member_Click(object sender, EventArgs e)
         {
@@ -43,7 +43,7 @@ namespace Project_Manager_App
         {
             try
             {
-                string connectionString = "Server=localhost\\SQLEXPRESS;Database=ProjectManagerDB;Trusted_Connection=True;Encrypt=False";
+                string connectionString = "Server=localhost\\MSSQLDEV;Database=ProjectManagerDB;Integrated Security=True;";
                 string query = "SELECT TaskId, Content, taskStatus, Finish_date FROM Tasks WHERE ProjectId = (SELECT ProjectId FROM Projects WHERE ProjectName = @currentProjectName)";
 
                 using (SqlConnection conn = new SqlConnection(connectionString))
@@ -109,7 +109,7 @@ namespace Project_Manager_App
 
             try
             {
-                string connectionString = "Server=localhost\\SQLEXPRESS;Database=ProjectManagerDB;Trusted_Connection=True;Encrypt=False";
+                string connectionString = "Server=localhost\\MSSQLDEV;Database=ProjectManagerDB;Integrated Security=True;";
                 string query = "SELECT TaskId, Content, taskStatus, Finish_date FROM Tasks WHERE ProjectId = (SELECT ProjectId FROM Projects WHERE ProjectName = @currentProjectName) AND taskStatus = @status";
 
                 using (SqlConnection conn = new SqlConnection(connectionString))
